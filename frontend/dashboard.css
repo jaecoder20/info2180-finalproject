@@ -24,11 +24,22 @@ h1{
     font-size: 1.5rem;
 }
 
-.header{
-    padding-left: 20px;
+.header p{
+    color: white;
+    font-size: 1rem;
+    margin-right: 20px;
+}
+.header div{
     gap: 15px;
     display: flex;
     align-items: center;
+}
+
+.header{
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     height: 11vh;
     background-color: var(--background-color-1);
 }
@@ -43,7 +54,7 @@ h1{
     background-color: white;
 }
 
-.navigation .list-items img, .dashboard .list-items img, .dash-top img{
+.navigation .list-items img, .dashboard .list-items img, .dash-top img, .header div:nth-of-type(2) img{
     width: 20px;
 }
 .navigation .list-items img{
