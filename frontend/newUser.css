@@ -144,14 +144,14 @@ input,select{
 
 .input-containers:nth-of-type(5){
     position: relative;
-    right: 100px;
+    right: 265px;
 }
 
 .form-submit {
     border-radius: 5px;
     position: relative;
-    top: 50px;
-    left: 70px;
+    top: -10px;
+    right: 4px;
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
