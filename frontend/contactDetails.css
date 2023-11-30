@@ -142,7 +142,7 @@ hr{
     background-color: white;
     width: 99.7%;
     float: right;
-    padding: 10px 50px;
+    padding: 30px 50px;
 }
 .content .contact-top{
     display: flex;
@@ -155,7 +155,7 @@ hr{
 }
 
 .content .info img{
-    width: 70px;
+    width: 60px;
     float: left;
     margin-right: 10px;
 }
@@ -201,6 +201,23 @@ hr{
     border-radius: 5px;
 }
 
+.contact-details{
+    position: relative;
+    right: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 99%;
+    border: 1px solid var(--colr-1);
+    border-radius: 5px;
+    height: 150px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.titles{
+    color: var(--colr-1);
+}
 
   /* for custom scrollbar for webkit browser*/
   
