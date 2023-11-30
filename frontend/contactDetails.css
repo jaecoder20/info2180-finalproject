@@ -9,6 +9,7 @@
     --sales-colr: #fcd34d;
     --assign-me-colr:#4ade80;
     --sales-colr-dark: #fbbf24;
+    --box-colr: rgba(200, 200, 200,0.8);
 }
 
 *{
@@ -56,7 +57,7 @@ h1{
     background-color: white;
 }
 
-.navigation .list-items img, .dashboard .list-items img, .dash-top img, .header div:nth-of-type(2) img, .control-buttons img{
+.navigation .list-items img, .dashboard .list-items img, .dash-top img, .header div:nth-of-type(2) img, .control-buttons img, .contact-notes img{
     width: 20px;
 }
 .navigation .list-items img{
@@ -138,7 +139,8 @@ hr{
 
 .content{
     height: 100% ;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     background-color: white;
     width: 99.7%;
     float: right;
@@ -208,7 +210,7 @@ hr{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     width: 99%;
-    border: 1px solid var(--colr-1);
+    border: 1px solid rgba(200, 200, 200,0.8);
     border-radius: 5px;
     height: 150px;
     padding: 20px;
@@ -219,5 +221,77 @@ hr{
     color: var(--colr-1);
 }
 
-  /* for custom scrollbar for webkit browser*/
+.contact-notes{
+    position: relative;
+    left: 10px;
+    border: 1px solid var(--box-colr);
+    border-radius: 5px;
+    width: 99%;
+}
+.notes-top{
+    
+    padding: 10px 10px;
+}
+.contact-notes img{
+    float: left;
+    margin-right: 10px;
+}
+.contact-notes hr{
+    margin: 10px 0 20px 0;
+    height: 3px;
+    background-color: rgba(200, 200, 200,0.1);
+    border: none;
+}
+
+.notes{
+    padding: 10px;
+    overflow-y: auto;
+    max-height: 500px;
+    
+    padding: 10px 10px;
+}
+
+.notes *{
+    margin-bottom: 10px;
+}
+
+.note{
+    margin-bottom: 20px;
+}
   
+#note-details, .note-date{
+    color: var(--colr-1);
+}
+
+.add-new-note{
+    background-color: var(--background-color-2);
+    padding: 20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+textarea{
+    resize: none;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: var(--default-font);
+}
+
+input[type='submit']{
+    align-self: flex-end;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    padding: 10px;
+    background-color: var(--button);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
