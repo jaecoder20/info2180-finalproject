@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+:root{
+    --default-font: 'Roboto', sans-serif;
+    --background-color-1: #1f2937;
+    --background-color-2: #f3f4f6;
+    --button: #4f46e5;
+    --colr-1: #7e7e7e;
+    --support-colr: #6366f1;
+    --sales-colr: #fcd34d;
+    --assign-me-colr:#4ade80;
+    --sales-colr-dark: #fbbf24;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: var(--default-font);
+}
+
+h1{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.header p{
+    color: white;
+    font-size: 1rem;
+    margin-right: 20px;
+}
+.header div{
+    gap: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.header{
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 11vh;
+    background-color: var(--background-color-1);
+}
+
+.navigation{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 14vw;
+    height: 89vh;
+    background-color: white;
+}
+
+.navigation .list-items img, .dashboard .list-items img, .dash-top img, .header div:nth-of-type(2) img, .control-buttons img{
+    width: 20px;
+}
+.navigation .list-items img{
+    position: relative;
+    top: 3px;
+    width: 20px;
+}
+
+hr{
+    margin-bottom: 10px;
+}
+
+.main-content{
+    display: flex;
+}
+
+.list-items{
+    list-style: none;
+    
+}
+.list-items a{
+    padding-left: 5px;
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.dashboard{
+    background-color: var(--background-color-2);
+    width: 100%;
+    height: 89vh;
+    
+}
+
+.content .filters ul{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.content .filters ul li:not(:first-child){
+    position: relative;
+    top: -3px;
+    color: var(--colr-1);
+    font-weight: 500;
+    transition: all 0.13s ease-in-out;
+}
+.content .filters ul li:not(:first-child):hover{
+    cursor: pointer;
+    color: var(--button);
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--button);
+}
+.selected{
+    color: var(--button) !important; 
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--button);
+}
+
+.label-f{
+    position: relative;
+    bottom: 5px;
+}
+.label-f img{
+    color: black;
+    box-sizing: content-box;
+    position: relative;
+    padding-right: 10px;
+    top: 2px;
+}
+.content .filters{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    align-self: flex-start;
+    margin: 10px 0 30px 0;
+}
+
+.content{
+    height: 100% ;
+    overflow: auto;
+    background-color: white;
+    width: 99.7%;
+    float: right;
+    padding: 10px 50px;
+}
+.content .contact-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .contact-top .info{
+    text-wrap: nowrap;
+}
+
+.content .info img{
+    width: 70px;
+    float: left;
+    margin-right: 10px;
+}
+
+.content .info h2{
+    margin: 5px 0;
+    font-size: 1.5rem;
+}
+
+.date-information{
+    color: var(--colr-1);
+}
+
+.control-buttons{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.button-1,.button-2{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    padding: 10px;
+    background-color: var(--assign-me-colr);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.button-2{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    padding: 10px;
+    background-color: var(--sales-colr-dark);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+
+  /* for custom scrollbar for webkit browser*/
+  
