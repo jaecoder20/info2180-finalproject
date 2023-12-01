@@ -9,7 +9,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 }
 
 // Include config file
-require_once "config.php"; // Make sure to use the correct path to your config file
+require_once "../database/config.php"; // Make sure to use the correct path to your config file
 
 // Define variables and initialize with empty values
 $email = $password = "";
