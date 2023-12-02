@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="newContacts.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolphin CRM - New Contact</title>
+</head>
+<body>
+    <header class="header">
+        <img src="/docs/Dolphin Emulator.svg" alt="">
+        <h1>Dolphin CRM</h1>
+    </header>
+    <main class="main-content">
+        <nav class="navigation">
+            <ul class="list-items">
+                <li><img src="/docs/Home.svg" alt=""><a href="">Home</a></li>
+                <li><img src="/docs/new-svgrepo-com.svg" alt=""><a href="">New Contact</a></li>
+                <li><img src="/docs/MySpace.svg" alt=""><a href="">Users</a></li>
+                <hr>
+                <li><img src="/docs/logout-svgrepo-com.svg" alt=""><a href="">Logout</a></li>
+            </ul>
+        </nav>
+        <section class="dashboard">
+            <div class="dash-top"> 
+                <h2>New Contact</h2>
+            </div>
+            <div class="content">
+                <form action="#" method="POST">
+                    <div class="input-containers-T">
+                        <label class="input-labels" for="title">Title</label>
+                        <select name="title">
+                            <option value="Mr.">Mr.</option>
+                            <option value="Mrs.">Mrs.</option>
+                            <option value="Ms.">Ms.</option>
+                            <option value="Dr.">Dr.</option>
+                        </select>
+                    </div>
+                    <div class="input-containers">
+                        <label class="input-labels" for="fname">First Name</label>
+                        <input type="text" name="fname" placeholder="Jane">
+                    </div>
+                    <div class="input-containers">
+                        <label class="input-labels" for="lname">Last Name</label>
+                        <input type="text" name="lname" placeholder="Brown">
+                    </div>
+                    <div class="input-containers">
+                        <label class="input-labels" for="email">Email</label>
+                        <input type="email" name="email" placeholder="email@example.com">
+                    </div>
+                    <div class="input-containers">
+                        <label class="input-labels" for="telephone">Telephone</label>
+                        <input type="tel" name="telephone" placeholder="123-456-7890">
+                    </div>
+                    <div class="input-containers">
+                        <label class="input-labels" for="company">Company</label>
+                        <input type="text" name="company" placeholder="ABC Corporation">
+                    </div>
+                    <div class="input-containers">
+                        <label class="input-labels" for="type">Type</label>
+                        <select name="type">
+                            <option value="Sales Lead">Sales Lead</option>
+                            <option value="Support">Support</option>
+                            
+                        </select>
+                    </div>
+                    <div class="input-containers">
+                        <label class="input-labels" for="assignedTo">Assigned To</label>
+                        <select name="assignedTo">
+                            <option value="user1">User 1</option>
+                            <option value="user2">User 2</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="form-submit">Save</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+</html>
