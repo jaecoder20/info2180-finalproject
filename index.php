@@ -26,7 +26,7 @@
                 <li><img src="docs/new-svgrepo-com.svg" alt=""><a href="">New Contact</a></li>
                 <li><img src="docs/MySpace.svg" alt=""><a href="">Users</a></li>
                 <hr>
-                <li><img src="docs/logout-svgrepo-com.svg" alt=""><a href="../backend/logout.php">Logout</a></li>
+                <li><img src="docs/logout-svgrepo-com.svg" alt=""><a href="http://localhost/info2180-finalproject/auth/logout.php">Logout</a></li>
             </ul>
         </nav>
         <section class="dashboard">
@@ -34,21 +34,4 @@
         </section>
     </main>
     </body>
-    <script>
-        // Make an AJAX call to check the PHP session
-        fetch('../check_session.php')
-            .then(response => response.json())
-            .then(data => {
-                if (!data.loggedin) {
-                    // If the user is not logged in, redirect to the login page
-                    window.location.href = '../login.php';
-                } else {
-                    // If logged in, you can display the dashboard content
-                    document.getElementById('dashboard-content').style.display = 'block';
-                }
-            })
-            .catch(error => {
-                console.error('Error checking session:', error);
-            });
-    </script>
 </html>
