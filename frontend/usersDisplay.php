@@ -1,6 +1,7 @@
 <div class="dash-top"> 
   <h2>Users</h2>
-  <button class="add-button"><img src="/docs/Plus.svg" alt=""> Add User</button>
+  <!-- <button class="add-button"><img src="../docs/Plus.svg" alt=""> <a href="newUser.php">Add User</a></button> -->
+  <a href="newUser.php" class="add-button"><img src="../docs/Plus.svg" alt="">Add User</a>
 </div>
 <div class="content">
 <?php 

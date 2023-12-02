@@ -38,3 +38,5 @@ CREATE TABLE IF NOT EXISTS Notes (
 
 INSERT INTO Users (firstname, lastname, password, email, role, created_at)
 VALUES ('Admin', 'User', '$2y$10$OM5emM7Q8sn3jm42Tsg3i.4yHo4zaJiwLc3X5nIB8ViopajOsTyLy', 'admin@project2.com', 'Administrator', CURRENT_TIMESTAMP);
+INSERT INTO Contacts (id, title, firstname, lastname, email, telephone, company, type, assigned_to, created_by, created_at, updated_at)
+VALUES ('1', 'Mr.', 'Rojae', 'Wedderburn', 'jae@email.com', '999-999-999','UWI Mona', 'Support', "Admin", "Admin", CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);

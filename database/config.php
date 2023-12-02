@@ -2,8 +2,8 @@
 
 // Database credentials
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'root');
+define('DB_USERNAME', 'project_user');
+define('DB_PASSWORD', 'password123');
 define('DB_NAME', 'dolphin_crm');
 
 /* Attempt to connect to MySQL database */

@@ -1,14 +1,14 @@
 <div class="content">
     <div class="contact-top">
         <div class="info">
-            <img src="docs/user-profile-avatar-svgrepo-com.svg" alt="">
+            <img src="../docs/user-profile-avatar-svgrepo-com.svg" alt="">
             <h2 id="user-ful-name">Mr. Michael Scott</h2>
             <p class="date-information">Created on November 9, 2022 By David Wallace</p>
             <p class="date-information">Updated on November 13, 2022</p>
         </div>
         <div class="control-buttons">
-            <button class="button-1"><img src="docs/hand-svgrepo-com.svg" alt=""> Assign to me</button>
-            <button class="button-2"><img src="docs/switch-horizontal-svgrepo-com.svg" alt=""> Switch to Sales Lead</button>
+            <button class="button-1"><img src="../docs/hand-svgrepo-com.svg" alt=""> Assign to me</button>
+            <button class="button-2"><img src="../docs/switch-horizontal-svgrepo-com.svg" alt=""> Switch to Sales Lead</button>
         </div>
     </div>
     <div class="contact-details">
@@ -31,7 +31,7 @@
     </div>
     <div class="contact-notes">
         <div class="notes-top">
-            <img src="docs/note-text-svgrepo-com.svg" alt="">
+            <img src="../docs/note-text-svgrepo-com.svg" alt="">
             <h3 class="titles">Notes</h3>
             <hr>
         </div>
