@@ -2,16 +2,16 @@
 // Initialize the session
 session_start();     
 
-// Check if the user is already logged in, if yes then redirect to the dashboard
+// Check if the user is already logged in, if yes then redirect
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     header("location: ../index.php");
     exit;
 }
 
 // Include config file
-require_once "../database/config.php"; // Make sure to use the correct path to your config file
+require_once "../database/config.php"; 
 
-// Define variables and initialize with empty values
+
 $email = $password = "";
 $email_err = $password_err = "";
 
@@ -55,16 +55,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     mysqli_stmt_bind_result($stmt, $id, $email, $hashed_password);
                     if (mysqli_stmt_fetch($stmt)) {
                         if (password_verify($password, $hashed_password)) {
-                            // Password is correct, so start a new session
-                            session_start();
-
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["email"] = $email;
 
                             // Redirect user to the dashboard
-                            header("location: ../frontend/dashboard.html");
+                            header("location: ../index.php");
                         } else {
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
@@ -92,31 +89,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="favicon" href="Dolphin Emulator.svg">
     <title>Login</title>
-    <style>
-        body { font: 14px sans-serif; }
-        .wrapper { width: 360px; padding: 20px; }
-    </style>
+    <link rel = "stylesheet" href="../styles/login.css">
+    <title>Login</title>
 </head>
 <body>
-    <div class="wrapper">
-        <h2>Login</h2>
+        <div class ="container">
+            <img src="../docs/Dolphin Emulator.svg">
+            <p>Dolphin CRM</p>
+        </div>
+
+    <div class="body">
+        <h1>Login</h1>
         <p>Please fill in your credentials to login.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
                 <label>Email</label>
-                <input type="email" name="email" class="form-control" value="<?php echo $email; ?>">
+                <input type="email" name="email" class="form-control" id="email" value="<?php echo $email; ?>">
                 <span class="help-block"><?php echo $email_err; ?></span>
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Password</label>
-                <input type="password" name="password" class="form-control">
+                <input type="password" name="password" id="password" class="form-control">
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
+                <input type="submit" class="login-btn" value="Login">
             </div>
+            <!-- <img id="padlock"> -->
         </form>
     </div>    
+    <hr>
+        <footer>
+            <p>Copyright @ 2023 Dolphin CRM</p>
+        </footer>
 </body>
 </html>

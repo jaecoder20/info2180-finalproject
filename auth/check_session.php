@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 // Return a JSON response indicating the session status
 header('Content-Type: application/json');
 
@@ -14,4 +13,5 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     echo json_encode(["loggedin" => true]);
     exit;
 }
+
 ?>
