@@ -3,51 +3,38 @@
   <button class="add-button"><img src="/docs/Plus.svg" alt=""> Add User</button>
 </div>
 <div class="content">
-      <table cellspacing="0">
+<?php 
+require_once "../database/config.php";
+$sql = "SELECT firstname, lastname, email, role FROM Users";
+echo '<table cellspacing="0">
         <thead>
           <tr>
             <th>Name</th>
             <th>Email</th>
-            <th>Role </th>
-            <th>Created</th>
+            <th>Role</th>
+            <th></th>
           </tr>
         </thead>
+        <tbody>';
 
-        <tbody>
-          <tr>
-            <td class="name-highlight">Mr. Michael Scott</td>
-            <td>michael.scott@paper.co</td>
-            <td>The Paper Company</td>
-            <td>Date</td>
-          </tr>
-          <tr>
-            <td class="name-highlight">Mr. Dwight Shrute</td>
-            <td>dwight.shrute@paper.co</td>
-            <td>The Paper Company</td>
-            <td>Date</td>
-          </tr>
-          <tr>
-            <td class="name-highlight">Ms. Pam Beesley</td>
-            <td>pam.beesley@dunder.co</td>
-            <td>Dunder Mifflin</td>
-            <td>Date</td>
-          </tr>
-          <tr>
-            <td class="name-highlight">Ms. Angela Martin</td>
-            <td>angela.martin@vance.co</td>
-            <td>Vance Refrigeration</td>
-            <td>Date</td>
-          </tr>
-          <tr>
-            <td class="name-highlight">Ms. Kelly Kapoor</td>
-            <td>kelly.kapoor@vance.co</td>
-            <td>Vance Refrigeration</td>
-            <td>Date</td>
-          </tr>
-          
-          
-          
-          
-        </tbody>
-      </table>
+if($result = mysqli_query($link, $sql)){
+    if(mysqli_num_rows($result) > 0){
+        while($row = mysqli_fetch_array($result)){
+            echo "<tr>";
+                echo "<td class='name-highlight'>" . $row['firstname'] . " " . $row['lastname'] . "</td>";
+                echo "<td>" . $row['email'] . "</td>";
+                echo "<td><p class='" . strtolower($row['role']) . "'>" . strtoupper($row['role']) . "</p></td>";
+                echo "<td><a href=''>View</a></td>";
+            echo "</tr>";
+        }
+        mysqli_free_result($result);
+    } else{
+        echo "<tr><td colspan='4'>No users found</td></tr>";
+    }
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+}
+
+echo '</tbody></table>';
+?>
 </div>
