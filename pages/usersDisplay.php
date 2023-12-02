@@ -5,14 +5,14 @@
 <div class="content">
 <?php 
 require_once "../database/config.php";
-$sql = "SELECT firstname, lastname, email, role FROM Users";
+$sql = "SELECT firstname, lastname, email, role, created_at FROM Users";
 echo '<table cellspacing="0">
         <thead>
           <tr>
             <th>Name</th>
             <th>Email</th>
             <th>Role</th>
-            <th></th>
+            <th>Created</th>
           </tr>
         </thead>
         <tbody>';
@@ -24,7 +24,7 @@ if($result = mysqli_query($link, $sql)){
                 echo "<td class='name-highlight'>" . $row['firstname'] . " " . $row['lastname'] . "</td>";
                 echo "<td>" . $row['email'] . "</td>";
                 echo "<td><p class='" . strtolower($row['role']) . "'>" . strtoupper($row['role']) . "</p></td>";
-                echo "<td><a href=''>View</a></td>";
+                echo "<td>" .$row['created_at'] . "</td>";
             echo "</tr>";
         }
         mysqli_free_result($result);
