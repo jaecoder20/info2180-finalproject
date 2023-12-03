@@ -8,13 +8,24 @@
     $password = mysqli_real_escape_string($link, $_POST['password']);
     $role = mysqli_real_escape_string($link, $_POST['role']);
 
+    // CHeck is password is strong with regex
+    function isPasswordStrong($password) {
+      $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/';
+      return preg_match($pattern, $password);
+  }
+
      // Check if user already exists
      $user_check_query = $link->prepare("SELECT * FROM Users WHERE email = ?");
      $user_check_query->bind_param("s", $email);
      $user_check_query->execute();
      $result = $user_check_query->get_result();
      $user_check_query->close();
- 
+
+     if (!isPasswordStrong($password)) {
+      echo "Password does not meet the required criteria.";
+      return;
+      }
+
      if ($result->num_rows > 0) {
          echo "User already exists with this email.";
      } else {
