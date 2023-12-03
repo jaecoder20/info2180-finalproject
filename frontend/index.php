@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="../scripts/app.js"></script>
-    <!-- <script src="../scripts/app.js"></script> -->
     <script src="../scripts/check_session.js"></script> 
 </head>
     <body>
@@ -37,15 +36,4 @@
         </section>
     </main>
     </body>
-    <!-- <script>
-      function logout() {
-        $.ajax({
-          url: "http://localhost/info2180-finalproject/auth/logout.php",
-          type: "POST",
-          success: function(data) {
-            window.location.href = "http://localhost/info2180-finalproject/auth/login.php";
-          }
-        });
-      }
-    </script> -->
 </html>
