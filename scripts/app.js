@@ -4,6 +4,7 @@ $(document).ready(function() {
         event.preventDefault();
         let page = $(this).attr("href");
         getDisplayAJAX(page);
+        console.log("page is: ", page);
     });
 });
 
@@ -30,4 +31,14 @@ function getDisplayAJAX(page) {
             console.error("Failed to load the page:", page);
         }
     });
+}
+
+function logout(){
+    $.ajax({
+        url: "http://localhost/info2180-finalproject/auth/logout.php",
+        type: "POST",
+        success: function(data) {
+          window.location.href = "http://localhost/info2180-finalproject/auth/login.php";
+        }
+      });
 }
