@@ -27,8 +27,7 @@
                 <li><img src="../docs/new-svgrepo-com.svg" alt=""><a href="newContacts.php">New Contact</a></li>
                 <li><img src="../docs/MySpace.svg" alt=""><a href="usersDisplay.php">Users</a></li>
                 <hr>
-                <li><button onclick="logout()">Logout</button></li>
-                <!-- <li><img src="../docs/logout-svgrepo-com.svg" alt=""><a href="http://localhost/info2180-finalproject/auth/logout.php" onclick="reloadToLogin()">Logout</a></li> -->
+                <li><img src="../docs/logout-svgrepo-com.svg" alt=""><a href="http://localhost/info2180-finalproject/auth/logout.php" onclick="logout()">Logout</a></li>
             </ul>
         </nav>
         <section class="dashboard">
