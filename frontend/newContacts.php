@@ -39,8 +39,9 @@
       </select>
     </div>
     <div class="input-containers">
-      <label class="input-labels" for="privilege">Assigned To</label>
-      <select name="privilege" id="privilege" required>
+      <label class="input-labels" for="role">Assigned To</label>
+      <!--@Mikes - same scenario as getting out contacts from the database using a for loop and listing them. -->
+      <select name="roles" name="role" required>
         <option value="admin">Admin</option>
         <option value="member">Member</option>
       </select>
