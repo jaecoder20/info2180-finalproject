@@ -23,19 +23,22 @@ $(document).ready(function() {
         var userName = firstname.value+" "+lastname.value;
         console.log("form works");
     
-        if (isEmpty(userName[0].trim())) {
+        if (isEmpty(firstname.value.trim())) {
           validationFailed = true;
-          alert("Please fill in your First Name")
-        };
-    
-        if (isEmpty(userName[1].trim())) {
+          alert("Please fill in your First Name");
+        }
+        if (isEmpty(lastname.value.trim())) {
           validationFailed = true;
           alert("Please fill in your Last Name")
-        }
-        if (!isValidEmail(email.value.trim())) {
+        };
+
+        if(isEmpty(email.value.trim())){
+            validationFailed = true;
+            alert("Please enter your email address.");
+        }else if (!isValidEmail(email.value.trim())) {
             validationFailed = true;
             alert("Incorrect format for email address.");
-        };
+        }
 
 
         if (password!=null){
@@ -63,7 +66,7 @@ $(document).ready(function() {
     
         if (validationFailed) {
           alert('Please fix issues in Form submission and try again.');
-          element.preventDefault();
+          event.preventDefault();
         }else {
             // Used callback so the form can be submitted after generating the success message
             alert(generateSuccessMessage(currentPage,userName));
