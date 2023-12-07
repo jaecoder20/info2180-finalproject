@@ -1,4 +1,5 @@
 <div class="dash-top"> 
+  <!-- put in IDS for forms elements to match labels -->
   <h2>New User</h2>
 </div>
 <div class="content">
