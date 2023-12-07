@@ -1,6 +1,6 @@
 <?php 
   require_once '../database/config.php';
-  if (isset($_POST['submit'])) {
+  if (isset($_POST['email'])) {
     // Sanitize user input
     $fname = mysqli_real_escape_string($link, $_POST['fname']);
     $lname = mysqli_real_escape_string($link, $_POST['lname']);

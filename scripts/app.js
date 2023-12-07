@@ -6,13 +6,13 @@ $(document).ready(function() {
         let page = $(this).attr("href");
         currentPage = page;
         getDisplayAJAX(page);
-        console.log("page is: ", page);
     });
     /* 
     *Client Side Validation
     *Coded so that both pages (newUser.php and newContacts.php) can use the same validation mechanisms
     */
     $("body").on('click',".form-submit",function(event){
+        event.preventDefault();
         var validationFailed = false;
         var firstname = document.querySelector('#fname');
         var lastname = document.querySelector('#lname');
@@ -21,7 +21,7 @@ $(document).ready(function() {
         var password = document.querySelector('#password');
         var company = document.querySelector('#company');
         var userName = firstname.value+" "+lastname.value;
-        console.log("form works");
+        var FormData = $('form').serialize();
     
         if (isEmpty(firstname.value.trim())) {
           validationFailed = true;
@@ -62,16 +62,27 @@ $(document).ready(function() {
             alert("Incorrect format for telephone number.");
             };
         }
-    
+        
+        console.log(FormData);
     
         if (validationFailed) {
           alert('Please fix issues in Form submission and try again.');
-          event.preventDefault();
         }else {
             // Used callback so the form can be submitted after generating the success message
             alert(generateSuccessMessage(currentPage,userName));
             setTimeout(function() {
-              document.querySelector('form').submit(); 
+                $.ajax({
+                    url: currentPage,
+                    type: 'POST',
+                    data: FormData,
+                    success: function(data) {
+                        getDisplayAJAX(currentPage);
+                    },
+                    error: function(err) {
+                        alert(err);
+                    }
+                })
+            //   document.querySelector('form').submit(); 
             }, 3000);
         }
          
@@ -83,7 +94,6 @@ function generateSuccessMessage(page,userName){
     userName = userName.split(" ");
     let newUserMsg = `Thank You! User ${userName[0]} ${userName[1]} was successfully created`;
     let newContactMsg = `Thank You! Contact ${userName[0]} ${userName[1]} was successfully created`;
-    console.log(page)
     return page=="newUser.php"? newUserMsg:newContactMsg;
 }
 
@@ -120,7 +130,6 @@ function isEmpty(elementValue) {
 function switchCss(page) {
     let stylesheetPath = "../styles/dashboard.css"; // Default stylesheet
 
-    console.log(page)
     if (page === 'newUser.php') {
         stylesheetPath = "../styles/newUser.css";
     } else if (page === 'contactDetails.php') {
