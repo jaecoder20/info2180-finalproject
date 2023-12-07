@@ -13,7 +13,7 @@
     <body>
     <header class="header">
       <div>
-        <img src="../docs/Dolphin Emulator.svg" alt="">
+        <img src="../docs/Dolphin Emulator.svg" alt="Image of a blue dolphin">
         <h1>Dolphin CRM</h1>
       </div>
       <div>
