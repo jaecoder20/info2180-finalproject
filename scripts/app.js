@@ -6,6 +6,7 @@ $(document).ready(function() {
         getDisplayAJAX(page);
         console.log("page is: ", page);
     });
+    
 });
 
 function switchCss(page) {
