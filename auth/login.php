@@ -96,13 +96,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Login</title>
 </head>
 <body>
-        <div class ="container">
-            <img src="../docs/Dolphin Emulator.svg">
-            <p>Dolphin CRM</p>
-        </div>
-
+    <div class ="container">
+        <img src="../docs/Dolphin Emulator.svg" alt="Imaage of a blue dolphin">
+        <h1>Dolphin CRM</h1>
+    </div>
+   
     <div class="body">
-        <h1>Login</h1>
+        <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
@@ -123,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>    
     <hr>
         <footer>
-            <p>Copyright © 2023 Dolphin CRM</p>
+            <p>Copyright &copy; 2023 Dolphin CRM</p>
         </footer>
 </body>
 </html>
