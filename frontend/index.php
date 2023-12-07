@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="favicon" href="../docs/Dolphin Emulator.svg">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <link id="variable-stylesheet" rel="stylesheet" href="../styles/dashboard.css">
     <meta charset="UTF-8">
