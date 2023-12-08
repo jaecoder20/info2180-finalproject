@@ -1,7 +1,7 @@
 <?php
   session_start();  
   require_once '../database/config.php';
- if (isset($_POST['submit'])) {
+ if (isset($_POST['email'])) {
    // Sanitize user input
    $title = strip_tags($_POST['title']);
    $fname = strip_tags($_POST['fname']);
