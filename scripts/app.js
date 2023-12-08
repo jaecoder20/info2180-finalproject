@@ -1,11 +1,31 @@
 $(document).ready(function() {
     let currentPage;
+    let currentContact;
     // Event Delegation - Attached click to persistent parent element, so that the script does not need to be rerun after loading a new page
     $("body").on('click', 'a', function(event) {
         event.preventDefault();
-        let page = $(this).attr("href");
-        currentPage = page;
-        getDisplayAJAX(page);
+        if ($(this).attr('class')=="defer-details"){
+            currentContact = $(this).attr('id');
+            $.ajax({
+                url: 'contactDetails.php',
+                type: 'GET',
+                data:{
+                    email: currentContact
+                },
+                success: function(data) {
+                    $('.dashboard').html(data);
+                    switchCss('contactDetails.php')
+                    console.log(data);
+                },
+                error: function(err) {
+                    alert(err);
+                }
+            })
+        }else{
+            let page = $(this).attr("href");
+            currentPage = page;
+            getDisplayAJAX(page);
+        }
     });
     /* 
     *Client Side Validation
@@ -86,6 +106,56 @@ $(document).ready(function() {
         }
          
     });
+    $("body").on('click',".note-submit",function(event){
+        event.preventDefault();
+        console.log('Note submit works')
+        var validationFailed = false;
+        var note = document.querySelector('#text-note');
+
+    
+        if (isEmpty(note.value.trim())) {
+          validationFailed = true;
+          alert("Please write a note");
+        }
+    
+        if (validationFailed) {
+          alert('Please fix issue in Form submission and try again.');
+        }else {
+
+        // alert(generateSuccessMessage(currentPage,userName));
+            $.ajax({
+                url: "contactDetails.php",
+                type: 'POST',
+                data:{
+                    comment: note.value,
+                    noteFor: currentContact,
+                },
+                success: function(data) {
+                    //reused code, create function
+                    $.ajax({
+                        url: 'contactDetails.php',
+                        type: 'GET',
+                        data:{
+                            email: data
+                        },
+                        success: function(data) {
+                            $('.dashboard').html(data);
+                            switchCss('contactDetails.php')
+                            console.log(data);
+                        },
+                        error: function(err) {
+                            alert(err);
+                        }
+                    })
+                    // getDisplayAJAX("contactDetails.php");
+                },
+                error: function(err) {
+                    alert(err);
+                }
+            })
+        }
+         
+    });
 });
 
 // Used to generate success message based on current page and username entered
@@ -141,6 +211,7 @@ function switchCss(page) {
 }
 
 function getDisplayAJAX(page) {
+    console.log(page)
     $('.dashboard').load(page, function(response, status, xhr) {
         if (status === "success") {
             switchCss(page);
