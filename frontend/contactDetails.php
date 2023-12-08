@@ -15,6 +15,7 @@ require_once '../database/config.php';
             $result = $stmt->get_result();
             if ($result->num_rows > 0) {
                 $result = $result->fetch_assoc();
+                $id = $result['id'];
                 $title = $result['title'];
                 $firstname = $result['firstname'];
                 $lastname = $result['lastname'];
@@ -24,9 +25,7 @@ require_once '../database/config.php';
                 $telephone = $result['telephone'];
                 $company = $result['company'];
                 $assignedTo = $result['assignNameR']." ".$result['assignNameL'];
-                // $stmt = $link->prepare("SELECT c.*,n.* FROM contacts c JOIN notes n ON n.contact_id=c.id WHERE c.email=':email'");
-                // $email = filter_input(INPUT_GET, 'email', FILTER_SANITIZE_EMAIL);
-                // $stmt->bindParam(':email', $email, PDO::PARAM_INT);
+
                 // $notes = $stmt->fetch(PDO::FETCH_ASSOC);
             
                 // echo "<div>".."</div>";
@@ -68,17 +67,35 @@ require_once '../database/config.php';
                             echo "<hr>";
                         echo "</div>";
                         echo "<div class='notes'>";
-                            echo "<div class='note'>";
-                                echo "<h4 class='note-creator>John Doe</h4>";
-                                echo "<p id='note-details'></p>";
-                                echo "<p class='note-date'>Date</p>";
-                            echo "</div>";
+                        $stmt1 = $link->prepare("SELECT * FROM notes WHERE contact_id=?");
+                        $stmt1->bind_param("s",$id);
+                        if ($stmt1->execute()) {
+                            $results = $stmt1->get_result();
+                            if ($results->num_rows > 0){
+                                while ($row = $results->fetch_assoc()) {
+                                    $stmt2 = $link->prepare("SELECT firstname,lastname FROM users WHERE id=?");
+                                    $stmt2->bind_param("s",$row['created_by']);
+                                    $stmt2->execute();
+                                    $creatorName = $stmt2->get_result();
+                                    $creatorName = $creatorName->fetch_assoc();
+                                    echo "<div class='note'>";
+                                    echo "<h4 class='note-creator'>".$creatorName['firstname'].' '.$creatorName['lastname']."</h4>";
+                                    echo "<p id='note-details'>".$row['comment']."</p>";
+                                    echo "<p class='note-date'>".$row['created_at']."</p>";
+                                    echo "</div>";
+                                }
+                            }else{
+                                echo "<p>NO NOTES AVAILABLE</p>";
+                            }
+                            
+                        }
+        
                         echo "</div>";
                 echo "<div class='add-new-note'>";
                     echo "<p>Add new note about <span id='user-first-name'>Michael</span></p>";
                     "<form action='#'>";
                         echo "<textarea required placeholder='Enter details here.' name='note' id='text-note' cols='140' rows='10'></textarea>";
-                        echo "<input type='submit' value='Add Note'>";
+                        echo "<input class='note-submit' type='submit' value='Add Note'>";
                     echo "</form>";
             echo "</div>";
         echo "</div>";
@@ -90,6 +107,30 @@ require_once '../database/config.php';
 
         // Close statement
         $stmt->close();
+        }else if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $comment = strip_tags($_POST['comment']);
+            $noteFor = strip_tags($_POST['noteFor']);
+            date_default_timezone_set("America/New_York");
+            $stmt1 = $link->prepare("SELECT id from contacts WHERE email=?");
+            $stmt1->bind_param("s", $noteFor);
+            $stmt1->execute();
+            $contactID = $stmt1->get_result();
+            $contactID = $contactID->fetch_assoc()['id'];
+            // Prepare an insert statement
+            $stmt = $link->prepare("INSERT INTO Notes (contact_id, comment, created_by) VALUES (?, ?, ?)");
+            
+            $stmt->bind_param("ssi",$contactID ,$comment, $_SESSION['id'],);
+
+            // Attempt to execute the prepared statement
+            if ($stmt->execute()) {
+                echo $noteFor;
+            } else {
+                echo "Error: " . $stmt->error;
+            }
+
+            // Close statement
+            $stmt->close();
         }
+
 
 ?>

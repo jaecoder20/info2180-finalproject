@@ -16,7 +16,7 @@
   </div>
 <?php 
 require_once "../database/config.php";
-$sql = "SELECT title,firstname, lastname, email, company, type FROM Contacts";
+$sql = "SELECT id,title,firstname, lastname, email, company, type FROM Contacts";
 
 echo '<table cellspacing="0">
         <thead>
@@ -39,6 +39,7 @@ if($result = mysqli_query($link, $sql)){
                 echo "<td>" . $row['email'] . "</td>";
                 echo "<td>" . $row['company'] . "</td>";
                 echo "<td><p class='" . $typeClass . "'>" . $row['type'] . "</p></td>";
+                // $_SESSION['contact_id'] = $row['id'];
                 echo "<td><a class='defer-details' id='" . $row['email'] . "' href='contactDetails.php'>View</a></td>"; //class will be used in javascript to signal when to send ajax request
                 //id will be the contacts email to be used as GET param in ajax request
                 
