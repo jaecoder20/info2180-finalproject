@@ -44,9 +44,9 @@
   <div class="input-containers">
       <label class="input-labels" for="title">Title</label>
       <select name="title" name="title" required>
-        <option value="Mr">Mr.</option>
-        <option value="Ms">Ms.</option>
-        <option value="Mrs">Mrs.</option>
+        <option value="Mr.">Mr.</option>
+        <option value="Ms.">Ms.</option>
+        <option value="Mrs.">Mrs.</option>
       </select>
     </div>
     <div class="input-containers">

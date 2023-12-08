@@ -63,27 +63,26 @@ $(document).ready(function() {
             };
         }
         
-        console.log(FormData);
+    
     
         if (validationFailed) {
           alert('Please fix issues in Form submission and try again.');
         }else {
-            // Used callback so the form can be submitted after generating the success message
-            alert(generateSuccessMessage(currentPage,userName));
-            setTimeout(function() {
-                $.ajax({
-                    url: currentPage,
-                    type: 'POST',
-                    data: FormData,
-                    success: function(data) {
-                        getDisplayAJAX(currentPage);
-                    },
-                    error: function(err) {
-                        alert(err);
-                    }
-                })
-            //   document.querySelector('form').submit(); 
-            }, 3000);
+        console.log(FormData);
+        // Used callback so the form can be submitted after generating the success message
+        alert(generateSuccessMessage(currentPage,userName));
+            $.ajax({
+                url: currentPage,
+                type: 'POST',
+                data: FormData,
+                success: function(data) {
+                    console.log(data);
+                    getDisplayAJAX(currentPage);
+                },
+                error: function(err) {
+                    alert(err);
+                }
+            })
         }
          
     });

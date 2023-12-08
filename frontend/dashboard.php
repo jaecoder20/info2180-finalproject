@@ -16,7 +16,7 @@
   </div>
 <?php 
 require_once "../database/config.php";
-$sql = "SELECT firstname, lastname, email, company, type FROM Contacts";
+$sql = "SELECT title,firstname, lastname, email, company, type FROM Contacts";
 
 echo '<table cellspacing="0">
         <thead>
@@ -33,11 +33,12 @@ echo '<table cellspacing="0">
 if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_array($result)){
+          $typeClass = ($row['type'] == 'SUPPORT') ? 'support' : 'sales-lead';
             echo "<tr>";
-                echo "<td>" . $row['firstname'] . " " . $row['lastname'] . "</td>";
+                echo "<td class='name-highlight'>".$row['title'].' ' . $row['firstname'] . " " . $row['lastname'] . "</td>";
                 echo "<td>" . $row['email'] . "</td>";
                 echo "<td>" . $row['company'] . "</td>";
-                echo "<td>" . $row['type'] . "</td>";
+                echo "<td><p class='" . $typeClass . "'>" . $row['type'] . "</p></td>";
                 echo "<td><a href='contactDetails.php'>View</a></td>";
             echo "</tr>";
         }
