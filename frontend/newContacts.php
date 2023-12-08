@@ -72,24 +72,10 @@
       <input id="company" type="text" placeholder="" name="company" required>
     </div>
     <div class="input-containers">
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <label class="input-labels" for="type">Type</label>
-      <select name="roles" name="type" required>
-=======
-      <label class="input-labels" for="roles">Type</label>
-      <select id="roles" name="roles" required>
->>>>>>> a299527fac9ab144e37ddb5c295fc4a098395d79
-        <option value="salesLead">Sales Lead</option>
-        <option value="support">Support</option>
-=======
-
       <label class="input-labels" for="type">Type</label>
       <select name="type" name="type" required>
         <option value="SALES LEAD">Sales Lead</option>
         <option value="SUPPORT">Support</option>
-
->>>>>>> ce44972ba4a038cb9f5b61d2aaaf3965f5452bdb
       </select>
     </div>
     <div class="input-containers">
