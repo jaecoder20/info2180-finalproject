@@ -1,6 +1,6 @@
 <?php 
   require_once '../database/config.php';
-  if (isset($_POST['submit'])) {
+  if (isset($_POST['email'])) {
     // Sanitize user input
     $fname = mysqli_real_escape_string($link, $_POST['fname']);
     $lname = mysqli_real_escape_string($link, $_POST['lname']);
@@ -52,29 +52,30 @@ $link->close();
 
 ?>
 <div class="dash-top"> 
+  <!-- put in IDS for forms elements to match labels -->
   <h2>New User</h2>
 </div>
 <div class="content">
   <form action="#" method="post">
     <div class="input-containers">
       <label class="input-labels" for="fname">First Name</label>
-      <input type="text" placeholder="Jane" name="fname" required>
+      <input id="fname" type="text" placeholder="Jane" name="fname" required>
     </div>
     <div class="input-containers">
       <label class="input-labels" for="lname">Last Name</label>
-      <input type="text" placeholder="Doe" name="lname" required>
+      <input id="lname" type="text" placeholder="Doe" name="lname" required>
     </div>
     <div class="input-containers">
       <label class="input-labels" for="email">Email</label>
-      <input type="email" placeholder="dummyemail@example.com" name="email" required>
+      <input id="email" type="email" placeholder="dummyemail@example.com" name="email" required>
     </div>
     <div class="input-containers">
       <label class="input-labels" for="password">Password</label>
-      <input type="password" name="password" required>
+      <input id="password" type="password" name="password" required>
     </div>
     <div class="input-containers">
       <label class="input-labels" for="role">Role</label>
-      <select name="role" required>
+      <select id="role" name="role" required>
         <option value="admin">Admin</option>
         <option value="member">Member</option>
       </select>
