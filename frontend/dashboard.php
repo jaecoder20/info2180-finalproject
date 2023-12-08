@@ -39,7 +39,9 @@ if($result = mysqli_query($link, $sql)){
                 echo "<td>" . $row['email'] . "</td>";
                 echo "<td>" . $row['company'] . "</td>";
                 echo "<td><p class='" . $typeClass . "'>" . $row['type'] . "</p></td>";
-                echo "<td><a href='contactDetails.php'>View</a></td>";
+                echo "<td><a class='defer-details' id='" . $row['email'] . "' href='contactDetails.php'>View</a></td>"; //class will be used in javascript to signal when to send ajax request
+                //id will be the contacts email to be used as GET param in ajax request
+                
             echo "</tr>";
         }
         mysqli_free_result($result);

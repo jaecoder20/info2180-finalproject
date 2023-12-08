@@ -1,28 +1,34 @@
 <?php
+session_start();  
+require_once '../database/config.php';
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        $stmt = $link->prepare("SELECT c.*,u.firstname as aNameR,u.lastname as aNameL,n.* FROM contacts c 
-        JOIN users u ON u.id=c.created_by JOIN notes n ON n.id = c.id WHERE c.email=':email'");
+        $stmt = $link->prepare("SELECT c.*, u.firstname as assignNameR, u.lastname as assignNameL, us.firstname as creatorF, us.lastname as creatorL
+        FROM contacts c
+        JOIN users u ON u.id = c.created_by 
+        JOIN users us ON us.id = c.assigned_to
+        WHERE c.email =?");
         $email = filter_input(INPUT_GET, 'email', FILTER_SANITIZE_EMAIL);
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bind_param("s", $email);
         // Attempt to execute the prepared statement
         if ($stmt->execute()) {
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            if($result){
+            $result = $stmt->get_result();
+            if ($result->num_rows > 0) {
+                $result = $result->fetch_assoc();
                 $title = $result['title'];
                 $firstname = $result['firstname'];
                 $lastname = $result['lastname'];
                 $createdAt = $result['created_at'];
-                $createdBy = $result['created_by'];
-                $updatedAt = $result['updated_at']
-                $email1 = $result['email'];
+                $createdBy = $result['creatorF']." ".$result['creatorL'];
+                $updatedAt = $result['updated_at'];
                 $telephone = $result['telephone'];
                 $company = $result['company'];
-                $assignedTo = $result['aNameR']." ".$result['aNameL'];
-                $stmt = $link->prepare("SELECT c.*,n.* FROM contacts c JOIN notes n ON n.contact_id=c.id WHERE c.email=':email'");
-                $email = filter_input(INPUT_GET, 'email', FILTER_SANITIZE_EMAIL);
-                $stmt->bindParam(':email', $email, PDO::PARAM_INT);
-                $notes = $stmt->fetch(PDO::FETCH_ASSOC);
+                $assignedTo = $result['assignNameR']." ".$result['assignNameL'];
+                // $stmt = $link->prepare("SELECT c.*,n.* FROM contacts c JOIN notes n ON n.contact_id=c.id WHERE c.email=':email'");
+                // $email = filter_input(INPUT_GET, 'email', FILTER_SANITIZE_EMAIL);
+                // $stmt->bindParam(':email', $email, PDO::PARAM_INT);
+                // $notes = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+                // echo "<div>".."</div>";
                 echo "<div class='content'>";
                     echo "<div class='contact-top'>";
                         echo "<div class='info'>";
@@ -41,17 +47,17 @@
                             echo "<h3 class='titles'>Email</h3>";
                             echo "<p id='info-email'>".$email."</p>";
                         echo "</div>";
-                        echo "<div class='user-info'>"
+                        echo "<div class='user-info'>";
                             echo "<h3 class='titles'>Telephone</h3>";
-                            echo "<p id='info-tele>".$telephone."</p>";
+                            echo "<p id='info-tele'>".$telephone."</p>";
                         echo "</div>";
                         echo "<div class='user-info'>";
                             echo "<h3 class='titles'>Company</h3>";
                             echo "<p id='info-company'>".$company."</p>";
                         echo "</div>";
-                        echo "<div class='user-info'>"
-                            echo "<h3 class='titles'>Assigned To</h3>"
-                            echo "<p id='info-assigned'>".$assignedTo."</p>"
+                        echo "<div class='user-info'>";
+                            echo "<h3 class='titles'>Assigned To</h3>";
+                            echo "<p id='info-assigned'>".$assignedTo."</p>";
                         echo "</div>";
                     echo "</div>";
                     echo "<div class='contact-notes'>";
@@ -62,14 +68,14 @@
                         echo "</div>";
                         echo "<div class='notes'>";
                             echo "<div class='note'>";
-                                echo "<h4 class='note-creator>John Doe</h4>"
+                                echo "<h4 class='note-creator>John Doe</h4>";
                                 echo "<p id='note-details'></p>";
                                 echo "<p class='note-date'>Date</p>";
                             echo "</div>";
-                        echo "</div>"
-                echo "<div class='add-new-note'>"
+                        echo "</div>";
+                echo "<div class='add-new-note'>";
                     echo "<p>Add new note about <span id='user-first-name'>Michael</span></p>";
-                    "<form action='#'>"
+                    "<form action='#'>";
                         echo "<textarea required placeholder='Enter details here.' name='note' id='text-note' cols='140' rows='10'></textarea>";
                         echo "<input type='submit' value='Add Note'>";
                     echo "</form>";

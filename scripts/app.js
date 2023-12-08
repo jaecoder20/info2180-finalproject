@@ -3,9 +3,27 @@ $(document).ready(function() {
     // Event Delegation - Attached click to persistent parent element, so that the script does not need to be rerun after loading a new page
     $("body").on('click', 'a', function(event) {
         event.preventDefault();
-        let page = $(this).attr("href");
-        currentPage = page;
-        getDisplayAJAX(page);
+        if ($(this).attr('class')=="defer-details"){
+            $.ajax({
+                url: 'contactDetails.php',
+                type: 'GET',
+                data:{
+                    email: $(this).attr('id')
+                },
+                success: function(data) {
+                    $('.dashboard').html(data);
+                    switchCss('contactDetails.php')
+                    console.log(data);
+                },
+                error: function(err) {
+                    alert(err);
+                }
+            })
+        }else{
+            let page = $(this).attr("href");
+            currentPage = page;
+            getDisplayAJAX(page);
+        }
     });
     /* 
     *Client Side Validation
