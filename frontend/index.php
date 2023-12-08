@@ -18,7 +18,21 @@
       </div>
       <div>
         <img src="../docs/profile-1336-svgrepo-com.svg" alt="">
-        <p id="user-name">Rojae Wedderburn</p>
+        <!-- <p id="user-name">Rojae Wedderburn</p> -->
+        <?php 
+          session_start();
+          require_once '../database/config.php';
+          $id = $_SESSION["id"];
+          $sql = "SELECT firstname, lastname FROM Users WHERE id = $id";
+          $result = mysqli_query($link, $sql);
+          if (mysqli_num_rows($result)) {
+                $row = mysqli_fetch_array($result);
+                $firstname = $row['firstname'];
+                $lastname = $row['lastname'];
+                echo "<p id='user-name'>" . htmlspecialchars($firstname) . " " . htmlspecialchars($lastname) . "</p>";
+            }
+        ?>
+        
       </div>
     </header>
     <main class="main-content">

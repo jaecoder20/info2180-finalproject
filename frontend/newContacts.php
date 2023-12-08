@@ -53,29 +53,31 @@
     </div>
     <div class="input-containers">
       <label class="input-labels" for="fname">First Name</label>
-      <input type="text" placeholder="Jane" name="fname" required>
+      <input id="fname" type="text" placeholder="Jane" name="fname" required>
     </div>
     <div class="input-containers">
       <label class="input-labels" for="lname">Last Name</label>
-      <input type="text" placeholder="Doe" name="lname" required>
+      <input id="lname" type="text" placeholder="Doe" name="lname" required>
     </div>
     <div class="input-containers">
       <label class="input-labels" for="email">Email</label>
-      <input type="email" placeholder="dummyemail@example.com" name="email" required>
+      <input id="email" type="email" placeholder="dummyemail@example.com" name="email" required>
     </div>
     <div class="input-containers">
       <label class="input-labels" for="telNum">Telephone</label>
-      <input type="tel" name="telNum" placeholder="e.g. 876-999-1234" required pattern="^\d{3}-\d{3}-\d{4}$" title="876-999-1234">
+      <input id="telNum" type="tel" name="telNum" placeholder="e.g. 876-999-1234" required pattern="^\d{3}-\d{3}-\d{4}$" title="876-999-1234">
     </div>
     <div class="input-containers">
       <label class="input-labels" for="company">Company</label>
-      <input type="text" placeholder="" name="company" required>
+      <input id="company" type="text" placeholder="" name="company" required>
     </div>
     <div class="input-containers">
+
       <label class="input-labels" for="type">Type</label>
       <select name="type" name="type" required>
         <option value="SALES LEAD">Sales Lead</option>
         <option value="SUPPORT">Support</option>
+
       </select>
     </div>
     <div class="input-containers">
