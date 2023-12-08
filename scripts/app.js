@@ -7,6 +7,14 @@ $(document).ready(function() {
         currentPage = page;
         getDisplayAJAX(page);
     });
+
+    //ajax query for filtering dashboard.
+    $("li a").on('click',function() {
+    
+        let filterId = $(this).attr('id');
+        filter(filterId);
+    });
+
     /* 
     *Client Side Validation
     *Coded so that both pages (newUser.php and newContacts.php) can use the same validation mechanisms
@@ -87,6 +95,10 @@ $(document).ready(function() {
         }
          
     });
+
+       
+
+
 });
 
 // Used to generate success message based on current page and username entered
@@ -160,4 +172,17 @@ function logout(){
           window.location.href = "http://localhost/info2180-finalproject/auth/login.php";
         }
       });
+}
+
+
+
+function filter(data){
+    const xhttp =new XMLHttpRequest();
+    xhttp.onload = function(){
+        if (this.readyState == 4 && this.status == 200) {
+
+            document.getElementsByClassName("dash-top").innerHTML=this.responseText;
+    }}
+    xhttp.open('GET','../frontend/dashboard.php?link='+data)
+    xhttp.send();
 }

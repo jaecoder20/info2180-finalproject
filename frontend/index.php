@@ -9,6 +9,8 @@
     <title>Document</title>
     <script src="../scripts/app.js"></script>
     <script src="../scripts/check_session.js"></script> 
+  
+  
 </head>
     <body>
     <header class="header">
