@@ -41,4 +41,7 @@ CREATE TABLE IF NOT EXISTS Notes (
 
 INSERT INTO Users (firstname, lastname, password, email, role, created_at)
 VALUES ('Admin', 'User', '$2y$10$OM5emM7Q8sn3jm42Tsg3i.4yHo4zaJiwLc3X5nIB8ViopajOsTyLy', 'admin@project2.com', 'Administrator', CURRENT_TIMESTAMP);
-INSERT INTO Contacts (id, title, firstname, lastname, email, telephone, company, type, assigned_to, created_by, created_at, updated_at)
+INSERT INTO Notes (id, contact_id, comment, created_by, created_at)
+VALUES(1,1,'This is a test note.', 1,CURRENT_TIMESTAMP);
+INSERT INTO Notes (id, contact_id, comment, created_by, created_at)
+VALUES(2,1,'This is test note 2.', 1,CURRENT_TIMESTAMP);
