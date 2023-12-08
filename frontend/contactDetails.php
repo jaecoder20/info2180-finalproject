@@ -7,6 +7,7 @@ require_once '../database/config.php';
         JOIN users u ON u.id = c.created_by 
         JOIN users us ON us.id = c.assigned_to
         WHERE c.email =?");
+        // $stmt = $link->prepare("SELECT c.*,  us.firstname as creatorF, us.lastname as creatorL FROM contacts c JOIN users us ON us.id = c.assigned_to WHERE c.email =?");
         $email = filter_input(INPUT_GET, 'email', FILTER_SANITIZE_EMAIL);
         $stmt->bind_param("s", $email);
         // Attempt to execute the prepared statement
