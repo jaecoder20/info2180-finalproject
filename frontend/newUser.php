@@ -76,8 +76,8 @@ $link->close();
     <div class="input-containers">
       <label class="input-labels" for="role">Role</label>
       <select id="role" name="role" required>
-        <option value="admin">Admin</option>
-        <option value="member">Member</option>
+        <option value="Administrator">Admin</option>
+        <option value="Member">Member</option>
       </select>
     </div>
     <input type="submit" name="submit" class="form-submit" value="Save">
