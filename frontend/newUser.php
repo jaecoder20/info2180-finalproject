@@ -10,7 +10,7 @@
 
     // CHeck is password is strong with regex
     function isPasswordStrong($password) {
-      $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/';
+      $pattern = '/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/';
       return preg_match($pattern, $password);
   }
 

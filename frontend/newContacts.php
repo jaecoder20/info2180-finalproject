@@ -1,3 +1,43 @@
+<?php
+  session_start();  
+  require_once '../database/config.php';
+ if (isset($_POST['submit'])) {
+   // Sanitize user input
+   $title = strip_tags($_POST['title']);
+   $fname = strip_tags($_POST['fname']);
+   $lname = strip_tags($_POST['lname']);
+   $email = strip_tags($_POST['email']);
+   $telNum = strip_tags($_POST['telNum']);
+   $company =strip_tags($_POST['company']);
+   $type = strip_tags($_POST['type']);
+   $assigned = (int)strip_tags($_POST['role']);
+
+
+   date_default_timezone_set("America/New_York");
+ 
+
+
+
+   // Prepare an insert statement
+   $stmt = $link->prepare("INSERT INTO Contacts (title, firstname, lastname, email, telephone, company, type, assigned_to, created_by, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+   $stmt->bind_param("ssssissiiss", $title,$fname, $lname, $email, $telNum, $company, $type, $assigned, $_SESSION['id'],date("Y-m-d h:i:sa"), date("Y-m-d h:i:sa"));
+
+   // Attempt to execute the prepared statement
+   if ($stmt->execute()) {
+       echo "New user created successfully";
+   } else {
+       echo "Error: " . $stmt->error;
+   }
+
+   // Close statement
+   $stmt->close();
+ }
+ // Close connection
+
+
+?>
+
+
 <div class="dash-top"> 
   <h2>New Contact</h2>
 </div>
@@ -5,10 +45,10 @@
   <form action="#" method="post">
   <div class="input-containers">
       <label class="input-labels" for="title">Title</label>
-      <select name="roles" name="title" required>
-        <option value="mr">Mr.</option>
+      <select name="title" name="title" required>
+        <option value="Mr">Mr.</option>
         <option value="ms">Ms.</option>
-        <option value="mrs">Mrs.</option>
+        <option value="Mrs">Mrs.</option>
       </select>
     </div>
     <div class="input-containers">
@@ -33,6 +73,7 @@
     </div>
     <div class="input-containers">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <label class="input-labels" for="type">Type</label>
       <select name="roles" name="type" required>
 =======
@@ -41,18 +82,26 @@
 >>>>>>> a299527fac9ab144e37ddb5c295fc4a098395d79
         <option value="salesLead">Sales Lead</option>
         <option value="support">Support</option>
+=======
+
+      <label class="input-labels" for="type">Type</label>
+      <select name="type" name="type" required>
+        <option value="SALES LEAD">Sales Lead</option>
+        <option value="SUPPORT">Support</option>
+
+>>>>>>> ce44972ba4a038cb9f5b61d2aaaf3965f5452bdb
       </select>
     </div>
     <div class="input-containers">
       <label class="input-labels" for="role">Assigned To</label>
-      <!--@Mikes - same scenario as getting out contacts from the database using a for loop and listing them. -->
-      <select name="roles" name="role" required>
+     
+      <select name="role" name="role" required>
+        <option value="Select">Select Option</option>
         <?php 
-        require_once '../database/config.php';
         if ($result = mysqli_query($link, "SELECT * FROM Users")){
           if (mysqli_num_rows($result) > 0){
             while ($user = mysqli_fetch_array($result)){
-              echo "<option value ='".$user['role']."'>".$user['firstname'] ." ".$user['lastname']."</option>";
+              echo "<option value ='".$user['id']."'>".$user['firstname'] ." ".$user['lastname']."</option>";
          
             }
             mysqli_free_result($result);
@@ -70,62 +119,5 @@
 </div>
 
 
- <!--require_once '../database/config.php';
- if (isset($_POST['submit'])) {
-   // Sanitize user input
-   $title = strip_tags($_POST['title']);
-   $fname = strip_tags($_POST['fname']);
-   $lname = strip_tags($_POST['lname']);
-   $email = strip_tags($_POST['email']);
-   $telNum = strip_tags($_POST['telNum']);
-   $company =strip_tags($_POST['company']);
-   $type = strip_tags($_POST['type']);
-   $assigned = strip_tags($_POST['role']);
 
-   // Check if telephone number matches the regex
-   function isaTelNum($telNum) {
-     $pattern = '^\d{3}-\d{3}-\d{4}$';
-     return preg_match($pattern, $telNum);
-   }
-
-    // Check if for assignment in user table
-    $user_check_query = $link->prepare("SELECT * FROM users WHERE role = ?");
-    $user_check_query->bind_param("s", $assigned);
-    $user_check_query->execute();
-    $result = $user_check_query->get_result();
-    $user_check_query->close();
-
-    if (!isaTelNum($telNum)) {
-     echo "Telephone number does not meet the required criteria.";
-     return;
-    }
-
-    foreach($result as $row){
-      if($row['role'] === $assigned && $row['']){
-        $assign_by = $row['id'];
-      }
-    }
-
-
-   // Prepare an insert statement
-   $stmt = $link->prepare("INSERT INTO contacts (title, firstname, lastname, email, telephone, company, type, assigned_to) VALUES (?, ?, ?, ?, ?,?, ?, ?)");
-   $stmt->bind_param("sssss", $title,$fname, $lname, $email, $telNum, $company, $type, $assigned);
-
-   // Attempt to execute the prepared statement
-   if ($stmt->execute()) {
-       echo "New user created successfully";
-   } else {
-       echo "Error: " . $stmt->error;
-   }
-
-   // Close statement
-   $stmt->close();
- }
- // Close connection
-$link->close();
-
-
-
-
-
-?>-->
+ 
