@@ -1,3 +1,43 @@
+<?php
+  session_start();  
+  require_once '../database/config.php';
+ if (isset($_POST['submit'])) {
+   // Sanitize user input
+   $title = strip_tags($_POST['title']);
+   $fname = strip_tags($_POST['fname']);
+   $lname = strip_tags($_POST['lname']);
+   $email = strip_tags($_POST['email']);
+   $telNum = strip_tags($_POST['telNum']);
+   $company =strip_tags($_POST['company']);
+   $type = strip_tags($_POST['type']);
+   $assigned = (int)strip_tags($_POST['role']);
+
+
+   date_default_timezone_set("America/New_York");
+ 
+
+
+
+   // Prepare an insert statement
+   $stmt = $link->prepare("INSERT INTO Contacts (title, firstname, lastname, email, telephone, company, type, assigned_to, created_by, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+   $stmt->bind_param("ssssissiiss", $title,$fname, $lname, $email, $telNum, $company, $type, $assigned, $_SESSION['id'],date("Y-m-d h:i:sa"), date("Y-m-d h:i:sa"));
+
+   // Attempt to execute the prepared statement
+   if ($stmt->execute()) {
+       echo "New user created successfully";
+   } else {
+       echo "Error: " . $stmt->error;
+   }
+
+   // Close statement
+   $stmt->close();
+ }
+ // Close connection
+
+
+?>
+
+
 <div class="dash-top"> 
   <h2>New Contact</h2>
 </div>
@@ -5,10 +45,10 @@
   <form action="#" method="post">
   <div class="input-containers">
       <label class="input-labels" for="title">Title</label>
-      <select name="roles" name="title" required>
-        <option value="mr">Mr.</option>
+      <select name="title" name="title" required>
+        <option value="Mr">Mr.</option>
         <option value="ms">Ms.</option>
-        <option value="mrs">Mrs.</option>
+        <option value="Mrs">Mrs.</option>
       </select>
     </div>
     <div class="input-containers">
@@ -32,20 +72,40 @@
       <input id="company" type="text" placeholder="" name="company" required>
     </div>
     <div class="input-containers">
-      <label class="input-labels" for="roles">Type</label>
-      <select id="roles" name="roles" required>
-        <option value="salesLead">Sales Lead</option>
-        <option value="support">Support</option>
+
+      <label class="input-labels" for="type">Type</label>
+      <select name="type" name="type" required>
+        <option value="SALES LEAD">Sales Lead</option>
+        <option value="SUPPORT">Support</option>
+
       </select>
     </div>
     <div class="input-containers">
       <label class="input-labels" for="role">Assigned To</label>
-      <!--@Mikes - same scenario as getting out contacts from the database using a for loop and listing them. -->
-      <select name="roles" name="role" required>
-        <option value="admin">Admin</option>
-        <option value="member">Member</option>
+     
+      <select name="role" name="role" required>
+        <option value="Select">Select Option</option>
+        <?php 
+        if ($result = mysqli_query($link, "SELECT * FROM Users")){
+          if (mysqli_num_rows($result) > 0){
+            while ($user = mysqli_fetch_array($result)){
+              echo "<option value ='".$user['id']."'>".$user['firstname'] ." ".$user['lastname']."</option>";
+         
+            }
+            mysqli_free_result($result);
+          }else{
+            echo "<option value =''>NO USERS</option>";
+          }          
+        }else{
+          echo "ERROR: Could not able to execute quert. " . mysqli_error($link);
+        }
+      ?>
       </select>
     </div>
     <input type="submit" name="submit" class="form-submit" value="Save">
   </form>
 </div>
+
+
+
+ 
