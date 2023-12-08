@@ -14,13 +14,12 @@
 
 
    date_default_timezone_set("America/New_York");
- 
 
 
 
    // Prepare an insert statement
-   $stmt = $link->prepare("INSERT INTO Contacts (title, firstname, lastname, email, telephone, company, type, assigned_to, created_by, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-   $stmt->bind_param("ssssissiiss", $title,$fname, $lname, $email, $telNum, $company, $type, $assigned, $_SESSION['id'],date("Y-m-d h:i:sa"), date("Y-m-d h:i:sa"));
+   $stmt = $link->prepare("INSERT INTO Contacts (title, firstname, lastname, email, telephone, company, type, assigned_to, created_by) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+   $stmt->bind_param("sssssssii", $title,$fname, $lname, $email, $telNum, $company, $type, $assigned, $_SESSION['id']);
 
    // Attempt to execute the prepared statement
    if ($stmt->execute()) {
@@ -32,7 +31,6 @@
    // Close statement
    $stmt->close();
  }
- // Close connection
 
 
 ?>
@@ -47,7 +45,7 @@
       <label class="input-labels" for="title">Title</label>
       <select name="title" name="title" required>
         <option value="Mr">Mr.</option>
-        <option value="ms">Ms.</option>
+        <option value="Ms">Ms.</option>
         <option value="Mrs">Mrs.</option>
       </select>
     </div>
@@ -97,6 +95,7 @@
         }else{
           echo "ERROR: Could not able to execute quert. " . mysqli_error($link);
         }
+        $link->close();
       ?>
       </select>
     </div>
