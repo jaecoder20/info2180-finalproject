@@ -9,6 +9,7 @@
     <title>Document</title>
     <script src="../scripts/app.js"></script>
     <script src="../scripts/check_session.js"></script> 
+    <script type="text/javascript" src="../scripts/getContact.js"></script>
 </head>
     <body>
     <header class="header">
@@ -38,7 +39,7 @@
     <main class="main-content">
         <nav class="navigation">
             <ul class="list-items">
-                <li><img src="../docs/Home.svg" alt=""><a href="dashboard.php">Home</a></li>
+                <li><img src="../docs/Home.svg" alt=""><a href="dashboard.php" onclick="filterContacts('all')">Home</a></li>
                 <li><img src="../docs/new-svgrepo-com.svg" alt=""><a href="newContacts.php">New Contact</a></li>
                 <li><img src="../docs/MySpace.svg" alt=""><a href="usersDisplay.php">Users</a></li>
                 <hr>
