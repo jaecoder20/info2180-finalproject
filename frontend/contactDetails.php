@@ -124,9 +124,17 @@ require_once '../database/config.php';
             // Attempt to execute the prepared statement
             if ($stmt->execute()) {
                 echo $noteFor;
+                       //INSERT STATEMENT TO UPDATE "last updated at" field
+                $stmt = $link->prepare("UPDATE Contacts 
+                       SET updated_at=NOW()
+                       WHERE id=?");
+
+                $stmt->bind_param("i", $contactID);
+                $stmt->execute();
             } else {
                 echo "Error: " . $stmt->error;
             }
+
 
             // Close statement
             $stmt->close();
