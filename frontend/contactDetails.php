@@ -90,7 +90,7 @@ require_once '../database/config.php';
         
                         echo "</div>";
                 echo "<div class='add-new-note'>";
-                    echo "<p>Add new note about <span id='user-first-name'>Michael</span></p>";
+                    echo "<p>Add new note about <span id='user-first-name'>".$firstname."</span></p>";
                     "<form action='#'>";
                         echo "<textarea required placeholder='Enter details here.' name='note' id='text-note' cols='140' rows='10'></textarea>";
                         echo "<input class='note-submit' type='submit' value='Add Note'>";
