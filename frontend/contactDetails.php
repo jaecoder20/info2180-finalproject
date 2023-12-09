@@ -2,11 +2,9 @@
 session_start();  
 require_once '../database/config.php';
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        $stmt = $link->prepare("SELECT c.*, u.firstname as assignNameR, u.lastname as assignNameL, us.firstname as creatorF, us.lastname as creatorL
-        FROM contacts c
-        JOIN users u ON u.id = c.created_by 
-        JOIN users us ON us.id = c.assigned_to
-        WHERE c.email =?");
+        $stmt = $link->prepare("SELECT c.*, 
+        u.firstname as creatorF, u.lastname as creatorL, us.firstname as assignNameF, us.lastname as assignNameL
+        FROM contacts c JOIN users u ON u.id = c.created_by JOIN users us ON us.id = c.assigned_to WHERE c.email =?;");
         // $stmt = $link->prepare("SELECT c.*,  us.firstname as creatorF, us.lastname as creatorL FROM contacts c JOIN users us ON us.id = c.assigned_to WHERE c.email =?");
         $email = filter_input(INPUT_GET, 'email', FILTER_SANITIZE_EMAIL);
         $stmt->bind_param("s", $email);
@@ -24,7 +22,7 @@ require_once '../database/config.php';
                 $updatedAt = $result['updated_at'];
                 $telephone = $result['telephone'];
                 $company = $result['company'];
-                $assignedTo = $result['assignNameR']." ".$result['assignNameL'];
+                $assignedTo = $result['assignNameF']." ".$result['assignNameL'];
 
                 // $notes = $stmt->fetch(PDO::FETCH_ASSOC);
             
