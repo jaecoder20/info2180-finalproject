@@ -162,6 +162,16 @@ input,select{
     cursor: pointer;
     width: 100px;
     align-self: flex-end;
+
+}
+
+
+
+@media screen and (max-width: 1385px) {
+    input,select{
+        width: 400px;
+    }
+
 }
 
 
