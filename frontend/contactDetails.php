@@ -142,5 +142,3 @@ require_once '../database/config.php';
 
 
 ?>
-<script src="../scripts/contactDetails.js">
-</script>
