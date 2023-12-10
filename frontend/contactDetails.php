@@ -24,7 +24,7 @@ require_once '../database/config.php';
                 $company = $result['company'];
                 $assignedTo = $result['assignNameF']." ".$result['assignNameL'];
                 $role = $result['type'];
-                $switchRole = $role == "Sales Lead" ? "Support" : "Sales Lead";
+                $switchRole = $role == "SALES LEAD" ? "SUPPORT" : "SALES LEAD";
                 // $notes = $stmt->fetch(PDO::FETCH_ASSOC);
             
                 // echo "<div>".."</div>";
