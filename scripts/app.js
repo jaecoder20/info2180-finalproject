@@ -27,6 +27,37 @@ $(document).ready(function() {
             getDisplayAJAX(page);
         }
     });
+    $("body").on('click', '#assignToMeButton', function() {
+        console.log("works")
+        sendFetchRequest('assign');
+    });
+
+    // Delegate 'click' event for '#switchToSalesLeadButton' to the body
+    $("body").on('click', '#switchToSalesLeadButton', function() {
+        console.log("works")
+        sendFetchRequest('switchRole');
+    });
+    function sendFetchRequest(actionType) {
+        const email = document.getElementById('info-email').textContent;
+        fetch('updateContacts.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                'email': email,
+                'action': actionType
+            })
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data);
+            window.location.reload();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
     /* 
     *Client Side Validation
     *Coded so that both pages (newUser.php and newContacts.php) can use the same validation mechanisms
