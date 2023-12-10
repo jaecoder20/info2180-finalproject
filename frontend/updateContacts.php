@@ -19,8 +19,28 @@ if (isset($_POST['email'], $_POST['action'])) {
         } else {
             $response['message'] = 'Failed to assign contact.';
         }
+    } elseif ($action === 'switchRole') {
+        $selectStmt = $link->prepare("SELECT type FROM Contacts WHERE email = ?");
+        $selectStmt->bind_param("s", $email);
+        if ($selectStmt->execute()) {
+            $result = $selectStmt->get_result();
+            $currentType = $result->fetch_assoc()['type'];
+            $newType = $currentType === 'Sales Lead' ? 'Support' : 'Sales Lead';
+
+            $updateStmt = $link->prepare("UPDATE Contacts SET type = ?, updated_at = NOW() WHERE email = ?");
+            $updateStmt->bind_param("ss", $newType, $email);
+            if ($updateStmt->execute()) {
+                $response['message'] = 'Contact type updated successfully.';
+                $response['newType'] = $newType;
+            } else {
+                $response['message'] = 'Failed to update contact type.';
+            }
+            $updateStmt->close();
+        } else {
+            $response['message'] = 'Failed to retrieve current contact type.';
+        }
+        $selectStmt->close();
     }
-    $stmt->close();
 }
 
 echo json_encode($response);

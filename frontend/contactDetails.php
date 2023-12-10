@@ -23,7 +23,8 @@ require_once '../database/config.php';
                 $telephone = $result['telephone'];
                 $company = $result['company'];
                 $assignedTo = $result['assignNameF']." ".$result['assignNameL'];
-
+                $role = $result['type'];
+                $switchRole = $role == "Sales Lead" ? "Support" : "Sales Lead";
                 // $notes = $stmt->fetch(PDO::FETCH_ASSOC);
             
                 // echo "<div>".."</div>";
@@ -38,7 +39,7 @@ require_once '../database/config.php';
                         echo "<div class='control-buttons'>";
                             
                             echo "<button class='button-1' id='assignToMeButton'><img src='../docs/hand-svgrepo-com.svg' alt=''> Assign to me</button>";
-                            echo "<button class='button-2' id='switchToSalesLeadButton'><img src='../docs/switch-horizontal-svgrepo-com.svg' alt=''> Switch to Sales Lead</button>";
+                            echo "<button class='button-2' id='switchToSalesLeadButton'><img src='../docs/switch-horizontal-svgrepo-com.svg' alt=''> Switch to ".$switchRole."</button>";
                         echo "</div>";
                     echo "</div>";
                     echo "<div class='contact-details'>";
@@ -144,6 +145,10 @@ require_once '../database/config.php';
 <script>
     document.getElementById('assignToMeButton').addEventListener('click', function() {
     sendFetchRequest('assign');
+});
+
+document.getElementById('switchToSalesLeadButton').addEventListener('click', function() {
+    sendFetchRequest('switchRole');
 });
 
 function sendFetchRequest(actionType) {
