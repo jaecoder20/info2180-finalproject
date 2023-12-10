@@ -62,7 +62,7 @@ require_once '../database/config.php';
                         echo "<div class=notes-top'>";
                             echo "<img src='../docs/note-text-svgrepo-com.svg' alt=''>";
                             echo "<h3 class='titles'>Notes</h3>";
-                            echo "<hr>";
+                            echo "<hr id='note-line'>";
                         echo "</div>";
                         echo "<div class='notes'>";
                         $stmt1 = $link->prepare("SELECT * FROM notes WHERE contact_id=?");
