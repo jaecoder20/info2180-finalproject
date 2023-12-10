@@ -135,10 +135,16 @@ require_once '../database/config.php';
                 echo "Error: " . $stmt->error;
             }
 
-
             // Close statement
             $stmt->close();
         }
 
-
 ?>
+
+<script>
+    const switchRoleButton = document.getElementById('switchToSalesLeadButton');
+    const switchRoleButtonText = switchRoleButton.textContent;
+    if (switchRoleButtonText.includes('SUPPORT')) {
+        switchRoleButton.style.backgroundColor = '#6366f1';
+    }
+</script>
