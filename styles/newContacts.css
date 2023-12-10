@@ -101,7 +101,7 @@ hr{
 .content{
     display: flex;
     flex-direction: column;
-    height: 550px;
+    max-height: 500px;
     margin-top: 20px;
     background-color: white;
     border-radius: 5px;
@@ -152,7 +152,7 @@ form{
 input,select{
     margin-top: 6px;
     margin-bottom: 30px;
-    width: 560px;
+    max-width: 500px;
     height: 35px;
     border: 1px solid var(--colr-1);
     border-radius: 5px;
@@ -172,8 +172,8 @@ input,select{
 
 .form-submit {
     position: relative;
-    left: 1050px;
-    bottom: 30px;
+    left: 900px;
+    bottom: 50px;
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 16px;
@@ -187,13 +187,30 @@ input,select{
 }
 
 
+@media screen and (min-width: 1920px) {
+    .form-submit {
+        left: 1100px;
+        bottom: 70px;
+       
+    }
+    input,select{
+        max-width: 700px;
+    }
+
+}
+@media screen and (max-width: 1220px) {
+    .form-submit {
+        left: 800px;
+        bottom: 70px;
+       
+    }
+    input,select{
+        max-width: 400px;
+    }
+
+}
 
 
 
 
-
-
-
-
-  /* for custom scrollbar for webkit browser*/
   
