@@ -90,7 +90,7 @@ footer{
 }
 
 hr{
-    background-color: #7e7e7e;
+    background-color: rgba(200, 200, 200,0.8);
     margin-top: 60px;
-    height: 0.02px;
+    
 }

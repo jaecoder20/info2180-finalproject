@@ -1,0 +1,574 @@
+[33mcommit 05da495441d0e3c2a87a5b6cf49cf1cc621394f8[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 0b3c055 f6aaac7
+Author: jaecoder20 <108883378+jaecoder20@users.noreply.github.com>
+Date:   Sat Dec 9 16:26:45 2023 -0500
+
+    Merge pull request #11 from dameliac/fix/dashboard-bug
+    
+    Fix/dashboard bug
+
+[33mcommit f6aaac7b36d065d664e3bcb23c5e0e4794dd0ccb[m[33m ([m[1;31morigin/fix/dashboard-bug[m[33m)[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Sat Dec 9 08:05:29 2023 -0500
+
+    Display contact name just above notes form
+
+[33mcommit 85ac4b6380895581ebdb033f1372e91bc5d1fb4d[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Sat Dec 9 08:00:44 2023 -0500
+
+    fixed query statement to output correct 'assigned to' and 'created by' values
+
+[33mcommit 8ca285087006be3b93944b77d20a47910f38cfe5[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Sat Dec 9 07:47:41 2023 -0500
+
+    'updated on' field of contact detailsnow updates with note submission
+
+[33mcommit e46ed5ca0fd116754282e9d50788f575f832648a[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 8 21:10:27 2023 -0500
+
+    Fix dashboard filter bug
+
+[33mcommit e13adc965ab11d7635c648da4fb9b39402fc4936[m[33m ([m[1;31morigin/architecture-change[m[33m)[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 8 18:37:22 2023 -0500
+
+    Fix view bug that resulted from merge
+
+[33mcommit cbf96c9e406842e0036b76e8d97b1ad46e5e34d4[m
+Merge: c2553db 1b479bd
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 8 18:27:12 2023 -0500
+
+    Merge pull request #10 from dameliac/update/contact-details-page
+    
+    Update/contact details page
+
+[33mcommit 1b479bd4f056a404bb38356a970ba4e1a7bbe0b9[m[33m ([m[1;31morigin/update/contact-details-page[m[33m)[m
+Merge: c818393 c2553db
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 8 18:26:51 2023 -0500
+
+    Merge branch 'architecture-change' into update/contact-details-page
+
+[33mcommit c8183934b9b0e26539df18064df101e3c2ab2762[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Fri Dec 8 18:15:09 2023 -0500
+
+    contact page now updates on note submission
+
+[33mcommit c2553db59db49acb29f0b84f08cc303c0a9b0c9f[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 8 16:41:59 2023 -0500
+
+    Complete get contacts functionality
+
+[33mcommit 313e9b3c2d1090eeab1d070f9352cfa41ee14e1e[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 8 16:41:28 2023 -0500
+
+    Implement JS logic to show different contact views
+
+[33mcommit 74d556a467f726dba1eac59d4a898ae260292343[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 8 16:40:27 2023 -0500
+
+    Add new file to handle contacts view
+
+[33mcommit 90cf9963c6557a46c00015674c8b4060cdba6486[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Fri Dec 8 16:30:16 2023 -0500
+
+    fixed sql query issues
+
+[33mcommit 07ba4cb280c6c1fcd02cabbbf507b54c63974a93[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Fri Dec 8 13:07:43 2023 -0500
+
+    Contact details page shows with some info, except notes
+
+[33mcommit cff59368525c7bab6b3bfcc3d7d2492d5d8dacb5[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Fri Dec 8 12:06:22 2023 -0500
+
+    php code to dynamically update contact details page
+
+[33mcommit 61a05955bd8f568b8c506d426a14d1c010746a00[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Fri Dec 8 02:44:00 2023 -0500
+
+    Fixed dashboard to show contact type style, removed call back because it allows the user to leave the page before user/contact is added to database, along with some other small fixes to make things work
+
+[33mcommit 2683b050dc793e5cae2c71b64da9627097a9ff5f[m[33m ([m[1;32marchitecture-change[m[33m)[m
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Fri Dec 8 01:42:03 2023 -0500
+
+    Updated form submission
+
+[33mcommit 8acb4879ba4848bf856d23694c0b5452d028dfb6[m
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Fri Dec 8 00:10:28 2023 -0500
+
+    Works without the client-side validation
+
+[33mcommit 7a0f20c06a89551fa5e20e0b4d983f7ad1eee6de[m
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Thu Dec 7 23:37:26 2023 -0500
+
+    Changed regex pattern
+
+[33mcommit 11ae1cc592d1fb67521ded3106bfd9213604a1b3[m
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Thu Dec 7 23:32:33 2023 -0500
+
+    Fixed merged errors
+
+[33mcommit 585ed409dceeec08d9cfd05a0a5e60d55f3ffa83[m
+Merge: d415077 ce44972
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Thu Dec 7 23:22:05 2023 -0500
+
+    Merged newContacts.php, Updated the regex pattern for NewUser.php, changed username and password to root for config.php, updated css for login.css
+
+[33mcommit d415077a0908cff07731830e3c160d1c098bc68d[m
+Merge: 1a5754a a299527
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Thu Dec 7 23:18:53 2023 -0500
+
+    Merged newContacts.php
+
+[33mcommit ce44972ba4a038cb9f5b61d2aaaf3965f5452bdb[m
+Merge: a299527 4715e18
+Author: Damelia Coleman <120197560+dameliac@users.noreply.github.com>
+Date:   Thu Dec 7 23:01:32 2023 -0500
+
+    Merge pull request #9 from dameliac/New-Contacts-Form-Submission
+    
+    New contacts form submission
+
+[33mcommit 4715e18605eac34a4e706bf9c7a081ce71fa50e2[m[33m ([m[1;31morigin/New-Contacts-Form-Submission[m[33m)[m
+Merge: 285581b a299527
+Author: Damelia Coleman <120197560+dameliac@users.noreply.github.com>
+Date:   Thu Dec 7 23:01:06 2023 -0500
+
+    Merge branch 'architecture-change' into New-Contacts-Form-Submission
+
+[33mcommit 285581b47c49c47d78ee7d1ac35fa042a634fe48[m[33m ([m[1;32mNew-Contacts-Form-Submission[m[33m)[m
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Thu Dec 7 22:32:10 2023 -0500
+
+    Updated login.css file
+
+[33mcommit b8de53b2ce9ad5cb6229a1c0bb41ace381941cd1[m
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Thu Dec 7 22:27:54 2023 -0500
+
+    Added form submission for new contacts
+
+[33mcommit a299527fac9ab144e37ddb5c295fc4a098395d79[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Thu Dec 7 20:38:15 2023 -0500
+
+    Display users name in header
+
+[33mcommit 1a5754a605eaa03c38a1bb49500dfa4f0955d485[m
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Thu Dec 7 17:43:59 2023 -0500
+
+    Added the php for the Assigned to feature
+
+[33mcommit e6c0ea08f9c529a10a198304324491826411b638[m
+Merge: 09eb627 27686ef
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Thu Dec 7 17:20:49 2023 -0500
+
+    merge
+
+[33mcommit 27686ef1f01276b252daff827c3cb99671e7b21e[m
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Thu Dec 7 15:41:59 2023 -0500
+
+    Commented out the Mikes comment
+
+[33mcommit df789df29dea8eebe25e4eacdbcb5060a1c02680[m
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Thu Dec 7 15:34:50 2023 -0500
+
+    Fixed the header css
+
+[33mcommit 64b747ac217cc6065fe605d9ec239365f71e4bad[m
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Thu Dec 7 15:18:09 2023 -0500
+
+    fixed the header css
+
+[33mcommit 34647c22f609ab16d0898faf93b733a5da169bca[m
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Thu Dec 7 15:17:34 2023 -0500
+
+    added alt for the image
+
+[33mcommit caba5ea9cd6c24f9202c8bc520dfd153ed807639[m
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Thu Dec 7 15:16:47 2023 -0500
+
+    added alt for the image
+
+[33mcommit da59804974c7d545b3983222f82cdf4bcab590f1[m
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Thu Dec 7 14:43:00 2023 -0500
+
+    Added a favicon
+
+[33mcommit 09eb6279bae5396db1928296b992047d491ffebe[m[33m ([m[1;31morigin/ajax-no-refresh[m[33m)[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Thu Dec 7 12:48:59 2023 -0500
+
+    Implemented AJAX to send form data to newUsers.php without it being redirected
+
+[33mcommit 535a73c038af6d750049da0764fadba0d6d71f3d[m
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Thu Dec 7 12:41:52 2023 -0500
+
+    Added my port to line 10 of config.php for access reason
+
+[33mcommit 9c6d290d9e70f66746765b3abeeb01d57eedee21[m
+Merge: 02475a3 43b5abd
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Thu Dec 7 11:55:23 2023 -0500
+
+    Merge branch 'feature/client-side-valiation' into ajax-no-refresh
+
+[33mcommit 43b5abd869793278a4b4278eb1430deebd141204[m[33m ([m[1;31morigin/feature/client-side-valiation[m[33m)[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Thu Dec 7 11:49:55 2023 -0500
+
+    small changes
+
+[33mcommit 1f1b12a98708ca76af44550229a2f678e93eb8f1[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Thu Dec 7 00:23:40 2023 -0500
+
+    Some small bug fixes
+
+[33mcommit 01c0c54ffc5dc53d897c72ed02f66e2d7d29b7b9[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Thu Dec 7 00:15:31 2023 -0500
+
+    Added success message generation
+
+[33mcommit 25893ccca1b04b912e7ae0d2d1aba26ece9ce179[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Wed Dec 6 22:57:32 2023 -0500
+
+    Preliminary client side validation complete - used JS alert() function to display warnings
+
+[33mcommit cbc9b4fa93a8905ef7ae28fb575530c4632e3059[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Wed Dec 6 22:31:01 2023 -0500
+
+    Added id names to input fields for JS DOM manipulation, fixed some small errors
+
+[33mcommit 02475a3f139fc206a133be0a62a23b1397342121[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Wed Dec 6 22:07:37 2023 -0500
+
+    Comment
+
+[33mcommit 49246528e007e6be7bb1518108bbcb303dac8d95[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Sun Dec 3 00:50:46 2023 -0500
+
+    Revert to initial logout style
+
+[33mcommit 75f741dfdb56ab31995567155f166a35cea225fd[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Sun Dec 3 00:47:55 2023 -0500
+
+    Remove unnecessary comment
+
+[33mcommit bcae8e97066fe664480fb97243bcf6001f30ecf7[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Sun Dec 3 00:45:56 2023 -0500
+
+    Fix logout bug
+
+[33mcommit 5210fdf45ecd195351f6df8b69df7f9f3340a1be[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Sun Dec 3 00:44:07 2023 -0500
+
+    Redirect user before DOM content load
+
+[33mcommit 7959cdc84e44a8ba38a1195977055f3722a94c30[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Sat Dec 2 20:19:19 2023 -0500
+
+    Check password strength with regex
+
+[33mcommit 16f50dcffd0eb55217837337900bf251492f1627[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Sat Dec 2 20:01:58 2023 -0500
+
+    Add checker if user exists
+
+[33mcommit af61888d5abd758bd8ee376a659e863b2d6056ed[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Sat Dec 2 19:58:47 2023 -0500
+
+    Implement user creation
+
+[33mcommit c7dff385575edc5a721331d49407e9121fa844a8[m
+Merge: df37b88 7989b00
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Sat Dec 2 19:32:13 2023 -0500
+
+    Merge pull request #7 from dameliac/ajax-no-refresh
+    
+    Implemented AJAX to get different page sections without refreshing. M…
+
+[33mcommit 7989b00ff465e13b907aacc9d5835d44e154de70[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Sat Dec 2 16:01:33 2023 -0500
+
+    Implemented AJAX to get different page sections without refreshing. Made minor adjustments to the SQL file, added and updated the newContacts files, simple html Form validation.
+
+[33mcommit df37b88603ea2af310eb3cb170b5ec326bfda711[m
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Sat Dec 2 15:24:18 2023 -0500
+
+    Updated login.css
+
+[33mcommit 9fc17f9e7fee0e56a84a4600f3cc3bcef3acafaf[m
+Author: Damelia Coleman <dameliac@outlook.com>
+Date:   Sat Dec 2 15:22:06 2023 -0500
+
+    Edited Login.php
+
+[33mcommit b9d7f2ebf465fc5e050567c3f9723b5036190c00[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 1 21:24:09 2023 -0500
+
+    Update dashboard to show contacts
+
+[33mcommit 6596ac9eb958dcb2f1900f293522d9d9305411f1[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 1 21:22:55 2023 -0500
+
+    Update user display to show created time
+
+[33mcommit 06e0de01da0389f839eb068e152ba8e64637447f[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 1 21:10:46 2023 -0500
+
+    Refactor to show users in userdisplay
+
+[33mcommit 016c5dec782f5d48e24088ef51d289d720413537[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 1 21:04:35 2023 -0500
+
+    Add dynamic user table display from database
+
+[33mcommit 18d76477345b0fb18b2ae833492d3a539aa236e5[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 1 20:44:21 2023 -0500
+
+    Resolve merge conflict
+
+[33mcommit b6a67d45adc0c5753f0ef4a6c61401366e6dd5ed[m
+Merge: 7930a21 1207bab
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 1 20:40:18 2023 -0500
+
+    Merge pull request #3 from dameliac/fix/php-page-migrations
+    
+    Renamed html pages and frontend folder. Refactored index.php to have …
+
+[33mcommit 1207bab2acbd6b62f45360b49b33a47a62fad9f7[m[33m ([m[1;31morigin/fix/php-page-migrations[m[33m)[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Fri Dec 1 20:30:26 2023 -0500
+
+    Renamed html pages and frontend folder. Refactored index.php to have a general page structure that includes content from the different pages
+
+[33mcommit 7930a215c509fd92601175ef4fd888ccc2df736a[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 1 19:55:58 2023 -0500
+
+    Mock login style
+
+[33mcommit 20f840e07dd1fd557d368546b31406bb1bf4b026[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 1 19:55:24 2023 -0500
+
+    Fix session log in bug
+
+[33mcommit 0ddea0d076699071faabf662a1b46f98327bb506[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 1 16:27:23 2023 -0500
+
+    Index page protected by session
+
+[33mcommit 69d82bd3d74eae2ecd5406bdf2ec642fa63d3615[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 1 15:48:04 2023 -0500
+
+    Implement more folder change
+
+[33mcommit 6820937c733d674d77c49823dbbc8fc0f3a363a1[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 1 14:50:59 2023 -0500
+
+    Implement inital folder restructure
+
+[33mcommit 49b787a06039913ad08713a95b99150b68881fee[m[33m ([m[1;31morigin/feature/auth[m[33m, [m[1;32mfeature/auth[m[33m)[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 1 10:22:37 2023 -0500
+
+    Implement dashboard session
+
+[33mcommit e4e6d29e933641462eec62a6bdb87dddd8741bc5[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 1 10:18:52 2023 -0500
+
+    Implement Dashboard AJAX
+
+[33mcommit 8b9946c61677e92fb9247241e2a59d0a4645d9fe[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Fri Dec 1 09:35:36 2023 -0500
+
+    Connect to DB
+
+[33mcommit ae81b85408e6334061569b68a24dccb2a8e98987[m[33m ([m[1;31morigin/develop[m[33m)[m
+Merge: 9d2f513 9603b7f
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Thu Nov 30 11:42:46 2023 -0500
+
+    Merge branch 'frontend' into develop
+
+[33mcommit 9603b7ff765aeeadf0c0cbe63ff143013695ac7f[m[33m ([m[1;31morigin/frontend[m[33m, [m[1;31morigin/feature/contact-details-page[m[33m)[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Thu Nov 30 11:41:24 2023 -0500
+
+    Added Notes section
+
+[33mcommit 486fb76af797c58f3eb8ad3f478d8e8af177c8dd[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Thu Nov 30 10:53:38 2023 -0500
+
+    Finished user details section
+
+[33mcommit 76802af2f1a0528b81746914375de62f6810e396[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Thu Nov 30 10:37:27 2023 -0500
+
+    finished top section of contact details
+
+[33mcommit 9d2f513471c22b3424c85da290a66a89aec06804[m
+Merge: 5a75598 9fc8fc8
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Thu Nov 30 09:58:01 2023 -0500
+
+    Merge branch 'develop' of https://github.com/dameliac/info2180-finalproject into develop
+
+[33mcommit 5a75598ec1800f3d6ec9f8572e7b348eb3e51169[m[33m ([m[1;31morigin/feature/users-display-page[m[33m)[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Thu Nov 30 09:55:19 2023 -0500
+
+    Added user page, uses dashboard.css file due to very similar styling
+
+[33mcommit 9fc8fc87e1b4dc362430299db74b0380abb19113[m
+Merge: cc17d9f d3eaf2a
+Author: jaecoder20 <108883378+jaecoder20@users.noreply.github.com>
+Date:   Thu Nov 30 09:35:28 2023 -0500
+
+    Merge pull request #1 from dameliac/backend
+    
+    Add database schema and admin user
+
+[33mcommit d3eaf2a27b5e12f8ffd6418244d51353f0a2da11[m[33m ([m[1;31morigin/backend[m[33m)[m
+Author: Michael Leighton <michael138leighton@gmail.com>
+Date:   Wed Nov 29 15:29:33 2023 -0500
+
+    Add database schema and admin user
+
+[33mcommit cc17d9f28250236c549fb7f7b923b0e608119c9d[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Wed Nov 29 14:25:09 2023 -0500
+
+    style fixx
+
+[33mcommit 570cc2f326490ccf1b0828ecc441b0d62bc3f644[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Wed Nov 29 14:18:28 2023 -0500
+
+    fixed styles
+
+[33mcommit 9830dbca53a834f4bb0b868c877e9b7560c13eff[m
+Merge: ba72bad 10601ca
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Wed Nov 29 14:15:50 2023 -0500
+
+    Merge branch 'frontend' into develop
+
+[33mcommit 10601cac7e4ee03831b02089d33e9e8ee22b1502[m[33m ([m[1;31morigin/fix/new-user-page[m[33m)[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Wed Nov 29 14:15:09 2023 -0500
+
+    Added p-tag to display name attached to user - could be useful when setting up sessions
+
+[33mcommit ba72badaf34f21cdc9c0fca879b8d6cc4236c48b[m
+Merge: ed5540a dcf75b5
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Wed Nov 29 14:12:55 2023 -0500
+
+    Merge branch 'frontend' into develop
+
+[33mcommit dcf75b5b5ec2b8d83c59aa3b8df77518ab28487a[m[33m ([m[1;31morigin/fix/dashboard[m[33m)[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Wed Nov 29 14:11:38 2023 -0500
+
+    Added p-tag to display name attached to user - could be useful when setting up sessions
+
+[33mcommit ed5540af23b3d85a9f1c31f779244d5df203a777[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Wed Nov 29 08:01:29 2023 -0500
+
+    Fixed form on user page
+
+[33mcommit 8a5f3b53a668c1a91e1e713a4289b3e1514378f4[m
+Merge: eb5bdee 197f657
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Tue Nov 28 22:49:32 2023 -0500
+
+    Merge branch 'feature/dashboard' into frontend
+
+[33mcommit eb5bdee3ae81acf63bde9a1b207d3b7354045618[m[33m ([m[1;31morigin/feature/new-user-page[m[33m)[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Tue Nov 28 22:48:32 2023 -0500
+
+    New user page
+
+[33mcommit 197f657f457ae81710fc09920d9c8f0c3b6e7800[m[33m ([m[1;31morigin/feature/dashboard[m[33m)[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Mon Nov 27 18:33:16 2023 -0500
+
+    Dashboard completed
+
+[33mcommit 0b3c0550265beb7573625742394ad0f1cbf28494[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Mon Nov 27 18:08:28 2023 -0500
+
+    Directory
+
+[33mcommit c15646f75e02bc369c21076cf12f3e5de89ae268[m
+Author: Rojae Wedderburn <rojaewedderburn@gmail.com>
+Date:   Mon Nov 27 18:07:07 2023 -0500
+
+    Directories
+
+[33mcommit c3e4bbf577971414750e7bf689e9bfc740e50105[m
+Author: Damelia Coleman <120197560+dameliac@users.noreply.github.com>
+Date:   Fri Nov 17 11:01:06 2023 -0500
+
+    Initial commit
