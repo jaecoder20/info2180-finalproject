@@ -36,8 +36,9 @@ require_once '../database/config.php';
                             echo "<p class='date-information'>Updated on ".$updatedAt."</p>";
                         echo "</div>";
                         echo "<div class='control-buttons'>";
-                            echo "<button class='button-1'><img src='../docs/hand-svgrepo-com.svg' alt=''> Assign to me</button>";
-                            echo "<button class='button-2'><img src='../docs/switch-horizontal-svgrepo-com.svg' alt=''> Switch to Sales Lead</button>";
+                            
+                            echo "<button class='button-1' id='assignToMeButton'><img src='../docs/hand-svgrepo-com.svg' alt=''> Assign to me</button>";
+                            echo "<button class='button-2' id='switchToSalesLeadButton'><img src='../docs/switch-horizontal-svgrepo-com.svg' alt=''> Switch to Sales Lead</button>";
                         echo "</div>";
                     echo "</div>";
                     echo "<div class='contact-details'>";
@@ -140,3 +141,33 @@ require_once '../database/config.php';
 
 
 ?>
+<script>
+    document.getElementById('assignToMeButton').addEventListener('click', function() {
+    sendFetchRequest('assign');
+});
+
+function sendFetchRequest(actionType) {
+    const email = document.getElementById('info-email').textContent;
+    fetch('updateContacts.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+            'email': email,
+            'action': actionType
+        })
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data);
+        window.location.reload();
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
+
+
+
+</script>
