@@ -7,7 +7,7 @@ img{
     height: 50px;
     width:50px;
     margin-left: 20px;
-    margin-top: 17px;
+    margin-top: 10px;
     margin-right: 5px;
 }
 
@@ -90,7 +90,7 @@ footer{
 }
 
 hr{
-    background-color: #7e7e7e;
+    background-color: rgba(200, 200, 200,0.8);
     margin-top: 60px;
-    height: 0.02px;
+    
 }

@@ -6,7 +6,7 @@
     <link id="variable-stylesheet" rel="stylesheet" href="../styles/dashboard.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dolphin CRM</title>
     <script src="../scripts/app.js"></script>
     <script src="../scripts/check_session.js"></script> 
     <script type="text/javascript" src="../scripts/getContact.js"></script>
@@ -41,7 +41,21 @@
             <ul class="list-items">
                 <li><img src="../docs/Home.svg" alt=""><a href="dashboard.php" onclick="filterContacts('all')">Home</a></li>
                 <li><img src="../docs/new-svgrepo-com.svg" alt=""><a href="newContacts.php">New Contact</a></li>
-                <li><img src="../docs/MySpace.svg" alt=""><a href="usersDisplay.php">Users</a></li>
+                <?php
+                  require_once '../database/config.php';
+                  $id = $_SESSION["id"];
+                  $sql = "SELECT role FROM Users WHERE id = $id";
+                  $result = mysqli_query($link, $sql);
+                  if (mysqli_num_rows($result)) {
+                    $row = mysqli_fetch_array($result);
+                    if ($row['role'] == 'Member'){
+                      echo "<li style='display:none'><img src='../docs/MySpace.svg' alt=''><a href='usersDisplay.php'>Users</a></li>";
+                    }elseif ($row['role'] == 'Administrator'){
+                      echo "<li><img src='../docs/MySpace.svg' alt=''><a href='usersDisplay.php'>Users</a></li>";
+                    }
+                  }
+                ?>
+                <!--<li><img src="../docs/MySpace.svg" alt=""><a href="usersDisplay.php">Users</a></li>-->
                 <hr>
                 <li><img src="../docs/logout-svgrepo-com.svg" alt=""><a href="http://localhost/info2180-finalproject/auth/logout.php" onclick="logout()">Logout</a></li>
             </ul>
