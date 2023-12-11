@@ -6,21 +6,7 @@ $(document).ready(function() {
         event.preventDefault();
         if ($(this).attr('class')=="defer-details"){
             currentContact = $(this).attr('id');
-            $.ajax({
-                url: 'contactDetails.php',
-                type: 'GET',
-                data:{
-                    email: currentContact
-                },
-                success: function(data) {
-                    $('.dashboard').html(data);
-                    switchCss('contactDetails.php')
-                    console.log(data);
-                },
-                error: function(err) {
-                    alert(err);
-                }
-            })
+            fetchPage('contactDetails.php',currentContact);
         }else{
             let page = $(this).attr("href");
             currentPage = page;
@@ -163,27 +149,13 @@ $(document).ready(function() {
                 },
                 success: function(data) {
                     //reused code, create function
-                    $.ajax({
-                        url: 'contactDetails.php',
-                        type: 'GET',
-                        data:{
-                            email: data
-                        },
-                        success: function(data) {
-                            $('.dashboard').html(data);
-                            switchCss('contactDetails.php')
-                            console.log(data);
-                        },
-                        error: function(err) {
-                            alert(err);
-                        }
-                    })
                     // getDisplayAJAX("contactDetails.php");
                 },
                 error: function(err) {
                     alert(err);
                 }
             })
+            fetchPage('contactDetails.php',currentContact);
         }
          
     });
@@ -261,4 +233,22 @@ function logout(){
           window.location.href = "http://localhost/info2180-finalproject/auth/login.php";
         }
       });
+}
+
+function fetchPage(page,currentContact){
+    $.ajax({
+        url: page,
+        type: 'GET',
+        data:{
+            email: currentContact
+        },
+        success: function(data) {
+            $('.dashboard').html(data);
+            switchCss('contactDetails.php')
+            console.log(data);
+        },
+        error: function(err) {
+            alert(err);
+        }
+    })
 }
