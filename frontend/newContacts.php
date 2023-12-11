@@ -13,9 +13,8 @@
    $assigned = (int)strip_tags($_POST['role']);
 
 
-   date_default_timezone_set("America/New_York");
-
-
+  
+  
 
    // Prepare an insert statement
    $stmt = $link->prepare("INSERT INTO Contacts (title, firstname, lastname, email, telephone, company, type, assigned_to, created_by) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -51,23 +50,23 @@
     </div>
     <div class="input-containers">
       <label class="input-labels" for="fname">First Name</label>
-      <input id="fname" type="text" placeholder="Jane" name="fname" required>
+      <input id="fname" type="text" placeholder="Jane" name="fname" autocomplete="on" required>
     </div>
     <div class="input-containers">
       <label class="input-labels" for="lname">Last Name</label>
-      <input id="lname" type="text" placeholder="Doe" name="lname" required>
+      <input id="lname" type="text" placeholder="Doe" name="lname" autocomplete="on" required>
     </div>
     <div class="input-containers">
       <label class="input-labels" for="email">Email</label>
-      <input id="email" type="email" placeholder="dummyemail@example.com" name="email" required>
+      <input id="email" type="email" placeholder="dummyemail@example.com" name="email" autocomplete="on" required>
     </div>
     <div class="input-containers">
       <label class="input-labels" for="telNum">Telephone</label>
-      <input id="telNum" type="tel" name="telNum" placeholder="e.g. 876-999-1234" required pattern="^\d{3}-\d{3}-\d{4}$" title="876-999-1234">
+      <input id="telNum" type="tel" name="telNum" placeholder="e.g. 876-999-1234" autocomplete="on" required pattern="^\d{3}-\d{3}-\d{4}$" title="876-999-1234">
     </div>
     <div class="input-containers">
       <label class="input-labels" for="company">Company</label>
-      <input id="company" type="text" placeholder="" name="company" required>
+      <input id="company" type="text" placeholder="" name="company" autocomplete="on" required>
     </div>
     <div class="input-containers">
       <label class="input-labels" for="type">Type</label>

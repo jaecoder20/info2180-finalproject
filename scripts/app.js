@@ -42,6 +42,7 @@ $(document).ready(function() {
         var company = document.querySelector('#company');
         var userName = firstname.value+" "+lastname.value;
         var FormData = $('form').serialize();
+        
     
         if (isEmpty(firstname.value.trim())) {
           validationFailed = true;
@@ -83,8 +84,7 @@ $(document).ready(function() {
             };
         }
         
-    
-    
+       
         if (validationFailed) {
           alert('Please fix issues in Form submission and try again.');
         }else {
@@ -122,7 +122,7 @@ $(document).ready(function() {
           alert('Please fix issue in Form submission and try again.');
         }else {
 
-        // alert(generateSuccessMessage(currentPage,userName));
+        //alert(generateSuccessMessage(currentPage,userName));
             $.ajax({
                 url: "contactDetails.php",
                 type: 'POST',
@@ -157,6 +157,11 @@ $(document).ready(function() {
          
     });
 });
+
+
+
+
+
 
 // Used to generate success message based on current page and username entered
 function generateSuccessMessage(page,userName){
