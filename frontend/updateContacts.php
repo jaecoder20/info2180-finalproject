@@ -25,7 +25,7 @@ if (isset($_POST['email'], $_POST['action'])) {
         if ($selectStmt->execute()) {
             $result = $selectStmt->get_result();
             $currentType = $result->fetch_assoc()['type'];
-            $newType = $currentType === 'Sales Lead' ? 'SUPPORT' : 'SALES LEAD';
+            $newType = $currentType === 'SALES LEAD' ? 'SUPPORT' :'SALES LEAD';
 
             $updateStmt = $link->prepare("UPDATE Contacts SET type = ?, updated_at = NOW() WHERE email = ?");
             $updateStmt->bind_param("ss", $newType, $email);

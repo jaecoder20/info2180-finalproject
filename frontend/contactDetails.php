@@ -24,7 +24,7 @@ require_once '../database/config.php';
                 $company = $result['company'];
                 $assignedTo = $result['assignNameF']." ".$result['assignNameL'];
                 $role = $result['type'];
-                $switchRole = $role == "Sales Lead" ? "Support" : "Sales Lead";
+                $switchRole = $role == "SALES LEAD" ? "Support" : "Sales Lead";
                 // $notes = $stmt->fetch(PDO::FETCH_ASSOC);
             
                 // echo "<div>".."</div>";
@@ -135,12 +135,16 @@ require_once '../database/config.php';
                 echo "Error: " . $stmt->error;
             }
 
-
             // Close statement
             $stmt->close();
         }
 
-
 ?>
-<script src="../scripts/contactDetails.js">
-</script>
+
+<!--<script>
+    const switchRoleButton = document.getElementById('switchToSalesLeadButton');
+    const switchRoleButtonText = switchRoleButton.textContent;
+    if (switchRoleButtonText.includes('Support')) {
+        switchRoleButton.style.backgroundColor = '#6366f1';
+    }
+</script>-->

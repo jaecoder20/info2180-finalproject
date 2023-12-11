@@ -1,32 +1,50 @@
 $(document).ready(function() {
     let currentPage;
     let currentContact;
+
     // Event Delegation - Attached click to persistent parent element, so that the script does not need to be rerun after loading a new page
     $("body").on('click', 'a', function(event) {
         event.preventDefault();
         if ($(this).attr('class')=="defer-details"){
             currentContact = $(this).attr('id');
-            $.ajax({
-                url: 'contactDetails.php',
-                type: 'GET',
-                data:{
-                    email: currentContact
-                },
-                success: function(data) {
-                    $('.dashboard').html(data);
-                    switchCss('contactDetails.php')
-                    console.log(data);
-                },
-                error: function(err) {
-                    alert(err);
-                }
-            })
+            fetchPage('contactDetails.php',currentContact);
         }else{
             let page = $(this).attr("href");
             currentPage = page;
             getDisplayAJAX(page);
         }
     });
+    $("body").on('click', '#assignToMeButton', function() {
+        console.log("works")
+        sendFetchRequest('assign');
+    });
+
+    // Delegate 'click' event for '#switchToSalesLeadButton' to the body
+    $("body").on('click', '#switchToSalesLeadButton', function() {
+        console.log("works")
+        sendFetchRequest('switchRole');
+    });
+    function sendFetchRequest(actionType) {
+        const email = document.getElementById('info-email').textContent;
+        fetch('updateContacts.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                'email': email,
+                'action': actionType
+            })
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data);
+            window.location.reload();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
     /* 
     *Client Side Validation
     *Coded so that both pages (newUser.php and newContacts.php) can use the same validation mechanisms
@@ -132,27 +150,13 @@ $(document).ready(function() {
                 },
                 success: function(data) {
                     //reused code, create function
-                    $.ajax({
-                        url: 'contactDetails.php',
-                        type: 'GET',
-                        data:{
-                            email: data
-                        },
-                        success: function(data) {
-                            $('.dashboard').html(data);
-                            switchCss('contactDetails.php')
-                            console.log(data);
-                        },
-                        error: function(err) {
-                            alert(err);
-                        }
-                    })
                     // getDisplayAJAX("contactDetails.php");
                 },
                 error: function(err) {
                     alert(err);
                 }
             })
+            fetchPage('contactDetails.php',currentContact);
         }
          
     });
@@ -235,4 +239,22 @@ function logout(){
           window.location.href = "http://localhost/info2180-finalproject/auth/login.php";
         }
       });
+}
+
+function fetchPage(page,currentContact){
+    $.ajax({
+        url: page,
+        type: 'GET',
+        data:{
+            email: currentContact
+        },
+        success: function(data) {
+            $('.dashboard').html(data);
+            switchCss('contactDetails.php')
+            console.log(data);
+        },
+        error: function(err) {
+            alert(err);
+        }
+    })
 }
