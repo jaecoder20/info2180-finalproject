@@ -55,9 +55,18 @@ The database contains three tables.
   #### Notes Table:
   ![the structure and data types for notes table](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/4f17bce7-8290-481e-b18b-1a90945d2ff6)
 
-
-
 ### Screenshots
+![login page](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/66f9e38f-fb2d-431f-a35a-24698c5ff70e)
+![dashboard displaying contacts](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/4d99d55f-667c-41b9-9992-25b3481b18a1)
+![new contact form](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/6771f9e2-22d6-4ea0-a2c1-22042d0a6eb0)
+![current system users](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/9d9941b8-7c63-410d-9993-d0d9126caec2)
+![add new users](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/3c6b263e-a605-4b51-8ab0-caeb09c884c7)
+![details for particular contact](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/1af46b8d-6fbd-4862-bc6d-3ceea8f31168)
+
+
+
+
+
 
 
 
