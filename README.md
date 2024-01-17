@@ -44,9 +44,12 @@ Dolphin CRM is a robust Customer Relationship Management (CRM) system designed t
 
 ### Database
 The database contains three tables.
-- Users Table: ![the structure and data types for users table](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/da1a8949-c4aa-4618-b6c9-f6b312edd899)
-- Contacts Table: ![the structure and data types for contacts table](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/378ec455-ea42-41c8-9b53-1eebd0763935)
-- Notes Table: ![the structure and data types for notes table](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/fa55be3d-1ad4-4940-a6ac-4b0983fdba1a)
+- Users Table:
+  ![the structure and data types for users table](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/da1a8949-c4aa-4618-b6c9-f6b312edd899)
+- Contacts Table:
+    ![the structure and data types for contacts table](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/378ec455-ea42-41c8-9b53-1eebd0763935)
+- Notes Table:
+    ![the structure and data types for notes table](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/fa55be3d-1ad4-4940-a6ac-4b0983fdba1a)
 
 
 
