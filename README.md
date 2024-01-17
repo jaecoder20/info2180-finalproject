@@ -50,9 +50,10 @@ The database contains three tables.
   #### Users Table:
   ![the structure and data types for users table](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/da1a8949-c4aa-4618-b6c9-f6b312edd899)
   #### Contacts Table:
-    ![the structure and data types for contacts table](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/378ec455-ea42-41c8-9b53-1eebd0763935)
+  ![the structure and data types for contacts table](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/37e1f897-82bd-4e16-ba00-596b24fc1d13)
+
   #### Notes Table:
-    ![the structure and data types for notes table](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/fa55be3d-1ad4-4940-a6ac-4b0983fdba1a)
+  ![the structure and data types for notes table](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/4f17bce7-8290-481e-b18b-1a90945d2ff6)
 
 
 
