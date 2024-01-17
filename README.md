@@ -16,15 +16,15 @@ This project was a collaborative effort to create a Customer Relationship Manage
   - [Continued development](#continued-development)
 
 ## Overview
-Dolphin CRM is a robust Customer Relationship Management (CRM) system designed to streamline user interactions and facilitate efficient contact management. The system incorporates a range of features to ensure a secure, user-friendly, and performant experience. 
+Dolphin CRM is a robust Customer Relationship Management (CRM) system designed to streamline user interactions and facilitate efficient contact management. The system incorporates various features to ensure a secure, user-friendly, and performant experience. 
 
 ### Features
   - User Authentication:
-    - Enables users to securely log in using their email and password.
+    - Enables users to log in using their email and password securely.
     - Implements PGP sessions for effective user session tracking.
      
   - User Management:
-    - Admins have the capability to add new users, ensuring a controlled and authorized user base.
+    - Admins can add new users, ensuring a controlled and authorized user base.
     - Enforces password security through regex expressions and employs hashing for secure storage in the database.
     - Implements a role-based access control (RBAC) system, distinguishing between admin and member roles.
 
@@ -37,7 +37,7 @@ Dolphin CRM is a robust Customer Relationship Management (CRM) system designed t
     - Includes sorting options to facilitate efficient data organization.
 
   - Contact Management:
-    - Enables users to seamlessly create new contacts, enhancing user flexibility.
+    - Enables users to  create new contacts, enhancing user flexibility.
     - Allows users to view detailed contact information, fostering informed decision-making.
     - Facilitates communication through the ability to send traceable notes to contacts.
 
@@ -63,22 +63,25 @@ The database contains three tables.
 ![add new users](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/3c6b263e-a605-4b51-8ab0-caeb09c884c7)
 ![details for particular contact](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/1af46b8d-6fbd-4862-bc6d-3ceea8f31168)
 
-
-
-
-
-
-
-
-
 ### Built with
-
+- HTML
+- CSS
+- JS
+- PHP
+- SQL
 
 ### What I learned
+- Client and Server-side validations
+- A deeper appreciation for network security
+- Asynchronous Javascript
+- PHP Sessions
+- Authentication
+- Database
 
-
-
-### Continued development
+### Future Improvements
+- Responsive design - currently the website only displays properly on some devices
+- Ability to edit and delete users/contacts
+- Writing notes will automatically send emails
 
 
 
