@@ -13,7 +13,7 @@ This project was a collaborative effort to create a Customer Relationship Manage
   - [Screenshot](#screenshot)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
+  - [Future Improvements](#future-improvements)
 
 ## Overview
 Dolphin CRM is a robust Customer Relationship Management (CRM) system designed to streamline user interactions and facilitate efficient contact management. The system incorporates various features to ensure a secure, user-friendly, and performant experience. 
