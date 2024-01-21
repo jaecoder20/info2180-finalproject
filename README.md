@@ -11,6 +11,7 @@ This project was a collaborative effort to create a Customer Relationship Manage
     - [Contacts Table](#contacts-table)
     - [Notes Table](#notes-table)
   - [Screenshot](#screenshot)
+  - [How To Use](#how-to-use)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Future Improvements](#future-improvements)
@@ -62,6 +63,12 @@ The database contains three tables.
 ![current system users](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/9d9941b8-7c63-410d-9993-d0d9126caec2)
 ![add new users](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/3c6b263e-a605-4b51-8ab0-caeb09c884c7)
 ![details for particular contact](https://github.com/jaecoder20/info2180-finalproject/assets/108883378/1af46b8d-6fbd-4862-bc6d-3ceea8f31168)
+
+### How To Use
+To run this application locally, you will need to have WAMP/MAMP/XAMP installed. 
+Username: admin@project2.com
+Password: password123
+
 
 ### Built with
 - HTML
